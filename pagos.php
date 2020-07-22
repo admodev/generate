@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<form action="/procesar_pago.php" method="post" id="pay" name="pay" >
+<form action="procesar_pago.php" method="post" id="pay" name="pay" >
     <fieldset>
         <p>
             <label for="description">Descripción</label>                        

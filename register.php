@@ -38,7 +38,7 @@ error_reporting(E_ALL);
         </div>
         <div class="container my-auto formulario">
             <h1 class="text-white titulo-registro text-center mt-5">Registro</h1>
-            <form method="POST" action="register.php" class="mt-5 d-flex flex-lg-row formulario-columna">
+            <form method="POST" action="opciones_pago.php" class="mt-5 d-flex flex-lg-row formulario-columna">
                 <div class="col-lg">
                     <input type="text" name="username" class="form-control m-2 w-75" placeholder="Usuario" required value="<?php echo $username; ?>">
                     <input type="email" name="email" class="form-control m-2" placeholder="Correo Electrónico" required value="<?php echo $email; ?>">
