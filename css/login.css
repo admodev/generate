@@ -1,0 +1,91 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html::-moz-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: url(../img/back-login.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.flecha-izquierda {
+  display: flex;
+  flex-direction: row;
+  float: left;
+  margin: 30px;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.flecha-derecha {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  margin: 30px;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.titulo-inicio {
+  font-family: "Open Sans", sans-serif;
+  font-weight: 400;
+  margin-top: 120px;
+}
+
+.icono-user {
+  font-size: 24px;
+  margin-top: 14px;
+  color: #fff;
+}
+
+.input-user {
+  padding: 2px 28px 2px 15px;
+  border-radius: 8px;
+  max-width: 221px;
+}
+
+.icono-password {
+  font-size: 24px;
+  margin-top: 14px;
+  color: #fff;
+}
+
+.input-password {
+  padding: 2px 100px 2px 15px;
+  border-radius: 8px;
+  max-width: 293px;
+}
+
+.boton-submit {
+  background-color: transparent;
+  padding: 2px, 7px, 2px, 7px;
+  border-radius: 15px;
+}

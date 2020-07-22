@@ -1,0 +1,639 @@
+html {
+  box-sizing: border-box;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* FONT FAMILIES: 
+  Open sans 400regular 700bold :
+  font-family: 'Open Sans', sans-serif;
+  Roboto 400regular:
+  font-family: 'Roboto', sans-serif;
+  */
+
+.logo {
+  position: absolute;
+  width: 230px;
+  height: 140px;
+}
+
+.nav {
+  margin-top: 20px;
+}
+
+.ul-menu {
+  margin-left: 370px;
+}
+
+.right-side {
+  margin-top: -360px;
+  margin-left: 570px;
+}
+
+.info {
+  margin-left: 430px;
+}
+
+.container-reproductor {
+    margin-top: 100px;
+    margin-left: 120px;
+  }
+
+  video {
+    margin-left: -65px;
+  }
+
+.divider-text {
+  position: relative;
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+.divider-text span {
+  padding: 7px;
+  font-size: 12px;
+  position: relative;
+  z-index: 2;
+}
+.divider-text:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  border-bottom: 1px solid #ddd;
+  top: 55%;
+  left: 0;
+  z-index: 1;
+}
+
+.p-columna {
+  -webkit-column-gap: 20px;
+  -moz-column-gap: 20px;
+  column-gap: 20px;
+  -webkit-column-count: 2;
+  -moz-column-count: 2;
+  column-count: 2;
+}
+
+.background-home {
+  width: 100%;
+  background: url("../img/back-home.png");
+  background-size: 1400px;
+}
+
+.background-register {
+  height: 100%;
+  background: url("../img/back-registro.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  -webkit-background-size: 100% 100%;
+  -moz-background-size: 100% 100%;
+  -o-background-size: 100% 100%;
+  background-size: 100% 100%;
+}
+
+.form-registro {
+  transform: translate(500px, 150px);
+}
+
+.boton-registro {
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     border-radius: 20px;
+     color: #ffffff;
+     font-family: Open Sans;
+     font-size: 32px;
+     font-weight: 400;
+     padding: 25px;
+     border: solid #ffffff 1px;
+     text-decoration: none;
+     display: inline-block;
+     cursor: pointer;
+     text-align: center;
+}
+
+/* Se puede hacer scroll pero con estas clases se 'esconde' la barra de scroll del costado: */
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+::-moz-scrollbar {
+  display: none;
+}
+
+/* Login */
+
+.login-form {
+  transform: translate(350px, 300px);
+}
+
+.back-testimonios {
+  width: 100%;
+  background-image: url("../img/back-testimonios-dos.png");
+  background-repeat: no-repeat;
+  background-size: 1400px;
+  transform: translate(0px, -48px);
+}
+
+.h2-testimonios {
+  transform: translate(0px, 20px);
+}
+
+p * {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+}
+
+.background-vision {
+  margin-left: -52px;
+  width: 1290px;
+  background-image: url(../img/vision.png);
+  background-size: cover;
+}
+
+.background-mision {
+  height: 300px;
+  margin-top: -50px;
+  margin-left: -52px;
+  width: 1290px;
+  background-image: url(../img/mision.png);
+  background-size: cover;
+}
+
+.p-vision {
+  margin-left: 32px;
+}
+
+.p-mision {
+  margin-left: 60px;
+}
+
+.h2-vision {
+  margin-top: -20px;
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+
+.h2-mision {
+  margin-left: 80px;
+  margin-bottom: 20px;
+}
+
+h1, h2, h3 * {
+  font-family: 'Open Sans', sans-serif;
+}
+
+.back-beneficios-uno {
+  width: 100%;
+  background-image: url(../img/beneficios-uno.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.back-beneficios-dos {
+  width: 100%;
+  background-image: url(../img/beneficios-dos.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.back-beneficios-tres {
+  width: 100%;
+  background-image: url(../img/beneficios-tres.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.back-beneficios-cuatro {
+  width: 100%;
+  background-image: url(../img/beneficios-cuatro.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.back-beneficios-cinco {
+  width: 100%;
+  background-image: url(../img/beneficios-cinco.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.comision {
+  margin-left: -30px;
+}
+
+.background-comision {
+  margin-top: 52px;
+  transform: translate(0px, 48px);
+  width: 1277px;
+  background-image: url(../img/back-comision.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.barra {
+  transform: translate(-500px, 0px);
+}
+
+.back-barra-login {
+  width: 100%;
+  background-image: url(../img/barra-login.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background-login {
+  height: 913px;
+  background: url("../img/back-registro.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.background-beneficios-descuentos-uno {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/DESCUENTOS.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.fila-uno {
+  background-color: #0001;
+  border: 1px solid #ffffff;
+  width: 1050px;
+  height: 150px;
+  margin-left: 120px;
+}
+
+.fila-dos {
+  background-color: #0001;
+  border: 1px solid #ffffff;
+  width: 1050px;
+  height: 150px;
+  margin-left: 120px;
+}
+
+.fila-tres {
+  background-color: #0001;
+  border: 1px solid #ffffff;
+  width: 1050px;
+  height: 150px;
+  margin-left: 120px;
+}
+
+.background-beneficios-descuentos-dos {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/background-prestamos.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.background-proyectos {
+  width: 100%;
+  height: 100%;
+  background-image: url("../img/proyectos-background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+
+.background-ayuda-social {
+  background-image: url("../img/ayudaSoc-background.png");
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+} 
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 516px) {
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *:before,
+  *:after {
+    box-sizing: inherit;
+  }
+  
+  /* FONT FAMILIES: 
+    Open sans 400regular 700bold :
+    font-family: 'Open Sans', sans-serif;
+    Roboto 400regular:
+    font-family: 'Roboto', sans-serif;
+    */
+  
+  .logo {
+    position: relative;
+    width: 230px;
+    height: 140px;
+    margin-top: 50px;
+    margin-right: 25px;
+  }
+
+  .nav {
+    margin-top: 0 auto;
+  }
+  
+  .ul-menu {
+    margin-left: 2px;
+  }
+
+  
+  .navbar-light .navbar-toggler-icon {
+    margin-left: 75px;
+    background-image: url(../img/toggler-icon.png);
+    color: #fff;
+  }
+  
+  .right-side {
+    margin-top: 0 auto;
+    margin-left: 0 auto;
+  }
+  
+  .info {
+    margin-left: 0 auto;
+  }
+  
+  .container-reproductor {
+    margin-top: auto;
+    margin-left: 0 auto;
+  }
+
+  video {
+    margin-left: 0 auto;
+  }
+
+  .divider-text {
+    position: relative;
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+  .divider-text span {
+    padding: 7px;
+    font-size: 12px;
+    position: relative;
+    z-index: 2;
+  }
+  .divider-text:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    border-bottom: 1px solid #ddd;
+    top: 55%;
+    left: 0;
+    z-index: 1;
+  }
+  
+  .p-columna {
+    -webkit-column-gap: 20px;
+    -moz-column-gap: 20px;
+    column-gap: 20px;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    column-count: 2;
+  }
+  
+  .background-home {
+    width: 100%;
+    background: url("../img/back-home.png");
+    background-size: 100% 25%;
+    background-repeat: no-repeat;
+  }
+  
+  .background-register {
+    height: 100%;
+    background: url("../img/back-registro.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    -webkit-background-size: 100% 100%;
+    -moz-background-size: 100% 100%;
+    -o-background-size: 100% 100%;
+    background-size: 100% 100%;
+  }
+  
+  .form-registro {
+    transform: translate(500px, 150px);
+  }
+  
+  .boton-registro {
+       -webkit-border-radius: 20px;
+       -moz-border-radius: 20px;
+       border-radius: 20px;
+       color: #ffffff;
+       font-family: Open Sans;
+       font-size: 32px;
+       font-weight: 400;
+       padding: 25px;
+       border: solid #ffffff 1px;
+       text-decoration: none;
+       display: inline-block;
+       cursor: pointer;
+       text-align: center;
+  }
+  
+  /* Se puede hacer scroll pero con estas clases se 'esconde' la barra de scroll del costado: */
+  
+  ::-webkit-scrollbar {
+    display: none;
+  }
+  
+  ::-moz-scrollbar {
+    display: none;
+  }
+  
+  /* Login */
+  
+  .login-form {
+    transform: translate(350px, 300px);
+  }
+  
+  .back-testimonios {
+    width: 100%;
+    background-image: url("../img/back-testimonios-dos.png");
+    background-repeat: no-repeat;
+    background-size: 1400px;
+    transform: translate(0px, -48px);
+  }
+  
+  .h2-testimonios {
+    transform: translate(0px, 20px);
+  }
+  
+  p * {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+  }
+  
+  .background-vision {
+    margin-left: -52px;
+    width: 1290px;
+    background-image: url(../img/vision.png);
+    background-size: cover;
+  }
+  
+  .background-mision {
+    height: 300px;
+    margin-top: -50px;
+    margin-left: -52px;
+    width: 1290px;
+    background-image: url(../img/mision.png);
+    background-size: cover;
+  }
+  
+  .p-vision {
+    margin-left: 32px;
+  }
+  
+  .p-mision {
+    margin-left: 60px;
+  }
+  
+  .h2-vision {
+    margin-top: -20px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+  }
+  
+  .h2-mision {
+    margin-left: 80px;
+    margin-bottom: 20px;
+  }
+  
+  h1, h2, h3 * {
+    font-family: 'Open Sans', sans-serif;
+  }
+  
+  .back-beneficios-uno {
+    width: 100%;
+    background-image: url(../img/beneficios-uno.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .back-beneficios-dos {
+    width: 100%;
+    background-image: url(../img/beneficios-dos.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .back-beneficios-tres {
+    width: 100%;
+    background-image: url(../img/beneficios-tres.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .back-beneficios-cuatro {
+    width: 100%;
+    background-image: url(../img/beneficios-cuatro.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .back-beneficios-cinco {
+    width: 100%;
+    background-image: url(../img/beneficios-cinco.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .comision {
+    margin-left: -30px;
+  }
+  
+  .background-comision {
+    margin-top: 52px;
+    transform: translate(0px, 48px);
+    width: 1277px;
+    background-image: url(../img/back-comision.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .barra {
+    transform: translate(-500px, 0px);
+  }
+  
+  .back-barra-login {
+    width: 100%;
+    background-image: url(../img/barra-login.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .background-login {
+    height: 913px;
+    background: url("../img/back-registro.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+  }
+  
+  .background-beneficios-descuentos-uno {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/DESCUENTOS.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .fila-uno {
+    background-color: #0001;
+    border: 1px solid #ffffff;
+    width: 1050px;
+    height: 150px;
+    margin-left: 120px;
+  }
+  
+  .fila-dos {
+    background-color: #0001;
+    border: 1px solid #ffffff;
+    width: 1050px;
+    height: 150px;
+    margin-left: 120px;
+  }
+  
+  .fila-tres {
+    background-color: #0001;
+    border: 1px solid #ffffff;
+    width: 1050px;
+    height: 150px;
+    margin-left: 120px;
+  }
+  
+  .background-beneficios-descuentos-dos {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/background-prestamos.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  
+  .background-proyectos {
+    width: 100%;
+    height: 100%;
+    background-image: url("../img/proyectos-background.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  }
+  
+  .background-ayuda-social {
+    background-image: url("../img/ayudaSoc-background.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+  } 
+  
+  
+}

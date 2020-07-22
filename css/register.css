@@ -1,0 +1,102 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Roboto:wght@400;700&display=swap");
+html {
+  box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
+html::-moz-scrollbar {
+  display: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Open Sans", sans-serif;
+}
+
+p {
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background: url(../img/back-registro.png) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.form-registro {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.boton-registro {
+     -webkit-border-radius: 20px;
+     -moz-border-radius: 20px;
+     border-radius: 20px;
+     color: #ffffff;
+     font-family: Open Sans;
+     font-size: 32px;
+     font-weight: 400;
+     padding: 25px;
+     border: solid #ffffff 1px;
+     text-decoration: none;
+     display: inline-block;
+     cursor: pointer;
+     text-align: center;
+}
+
+.flecha-izquierda {
+  display: flex;
+  flex-direction: row;
+  float: left;
+  margin: 30px;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+.flecha-derecha {
+  display: flex;
+  flex-direction: row;
+  float: right;
+  margin: 30px;
+  font-size: 1.4em;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .flecha-izquierda {
+    margin-left: 100px;
+  }
+  .flecha-derecha {
+    margin-right: 50px;
+  }
+  .formulario {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .formulario-columna {
+    max-width: fit-content;
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}

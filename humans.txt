@@ -1,0 +1,15 @@
+# humanstxt.org/
+# The humans responsible & technology colophon
+
+# TEAM
+
+    Adolfo Moyano -- Full Stack Developer -- twitter.com/admodev
+
+# THANKS
+
+    To all the people who make this possible.
+
+# TECHNOLOGY COLOPHON
+
+    CSS3, HTML5, PHP, MySQL, Javascript
+    Linux, Apache Server Configs, jQuery, AJAX, Modernizr, Normalize.css
