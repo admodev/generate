@@ -24,27 +24,27 @@
 <form action="procesar_pago.php" method="post" id="pay" name="pay" >
     <fieldset>
         <p>
-            <label for="description">Descripción</label>                        
-            <input type="text" name="description" id="description" value="Ítem seleccionado"/>
+            <label for="description" class="text-white text-uppercase">Descripción</label>                        
+            <input type="text" name="description" id="description" class="form-control" value="Ítem seleccionado"/>
         </p>                    
         <p>
-            <label for="transaction_amount">Monto a pagar</label>                        
-            <input name="transaction_amount" id="transaction_amount" value="100"/>
+            <label for="transaction_amount" class="text-white text-uppercase">Monto a pagar</label>                        
+            <input name="transaction_amount" id="transaction_amount" class="text-white text-uppercase" value="100"/>
         </p>
         <p>
-            <label for="cardNumber">Número de la tarjeta</label>
-            <input type="text" id="cardNumber" data-checkout="cardNumber" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+            <label for="cardNumber" class="text-white text-uppercase">Número de la tarjeta</label>
+            <input type="text" id="cardNumber" class="form-control" data-checkout="cardNumber" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
         </p>
         <p>
-            <label for="cardholderName">Nombre y apellido</label>
-            <input type="text" id="cardholderName" data-checkout="cardholderName" />
+            <label for="cardholderName" class="text-white text-uppercase">Nombre y apellido</label>
+            <input type="text" id="cardholderName" class="form-control" data-checkout="cardholderName" />
         </p>                                    
         <p>
-            <label for="cardExpirationMonth">Mes de vencimiento</label>
-            <input type="text" id="cardExpirationMonth" data-checkout="cardExpirationMonth" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
+            <label for="cardExpirationMonth" class="text-white text-uppercase">Mes de vencimiento</label>
+            <input type="text" id="cardExpirationMonth" class="form-control" data-checkout="cardExpirationMonth" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
         </p>
         <p>
-            <label for="cardExpirationYear">Año de vencimiento</label>
+            <label for="cardExpirationYear" class="text-white text-uppercase">Año de vencimiento</label>
             <input type="text" id="cardExpirationYear" data-checkout="cardExpirationYear" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
         </p>
         <p>

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" style="height: 100%;">
+<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/beneficios-proyectos.min.css" />
+    <link rel="stylesheet" href="./build/css/beneficios-proyectos.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
@@ -28,12 +28,12 @@
         <h1 class="text-white text-uppercase" style="margin-top: 58px;">Proyectos</h1>
     </div>
     <div class="fotos">
-        <img src="./img/proyectos-foto-uno.png" alt="foto-proyectos-uno" style="width: 275px; height: 180px; margin-top: 62px; margin-left: 140px;">
-        <img src="./img/proyectos-foto-dos.png" alt="foto-proyectos-dos" style="width: 275px; height: 180px; margin-top: 62px; margin-left: 100px;">
-        <img src="./img/proyectos-foto-tres.png" alt="foto-proyectos-tres" style="width: 275px; height: 180px; float: right; margin-top: 62px; margin-right: 110px;">
+        <img src="./img/proyectos-foto-uno.png" alt="foto-proyectos-uno" class="foto-proyectos-uno">
+        <img src="./img/proyectos-foto-dos.png" alt="foto-proyectos-dos" class="foto-proyectos-dos">
+        <img src="./img/proyectos-foto-tres.png" alt="foto-proyectos-tres" class="foto-proyectos-tres">
     </div>
     <div class="texto">
-        <h3 class="text-white" style="margin-top: 25px; margin-left: 140px;">PANIFICADORA <br> ZONA SUR</h3>
+        <h3 class="text-white" class="h3-proyectos-uno">PANIFICADORA <br> ZONA SUR</h3>
         <p class="text-white mt-4" style="margin-left: 140px;">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none" style="margin-left: 370px;">+ INFO</a>
         <h3 class="text-white" style="margin-top: -400px; margin-left: 520px;">MUDANZAS EN <br> TODO EL PAÍS</h3>
         <p class="text-white mt-4" style="margin-left: 520px;">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none" style="margin-left: 740px;">+ INFO</a>
