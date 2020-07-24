@@ -21,56 +21,10 @@
 </head>
 
 <body>
-<form action="procesar_pago.php" method="post" id="pay" name="pay" >
-    <fieldset>
-        <p>
-            <label for="description" class="text-white text-uppercase">Descripción</label>                        
-            <input type="text" name="description" id="description" class="form-control" value="Ítem seleccionado"/>
-        </p>                    
-        <p>
-            <label for="transaction_amount" class="text-white text-uppercase">Monto a pagar</label>                        
-            <input name="transaction_amount" id="transaction_amount" class="text-white text-uppercase" value="100"/>
-        </p>
-        <p>
-            <label for="cardNumber" class="text-white text-uppercase">Número de la tarjeta</label>
-            <input type="text" id="cardNumber" class="form-control" data-checkout="cardNumber" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
-        </p>
-        <p>
-            <label for="cardholderName" class="text-white text-uppercase">Nombre y apellido</label>
-            <input type="text" id="cardholderName" class="form-control" data-checkout="cardholderName" />
-        </p>                                    
-        <p>
-            <label for="cardExpirationMonth" class="text-white text-uppercase">Mes de vencimiento</label>
-            <input type="text" id="cardExpirationMonth" class="form-control" data-checkout="cardExpirationMonth" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
-        </p>
-        <p>
-            <label for="cardExpirationYear" class="text-white text-uppercase">Año de vencimiento</label>
-            <input type="text" id="cardExpirationYear" data-checkout="cardExpirationYear" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
-        </p>
-        <p>
-            <label for="securityCode">Código de seguridad</label>
-            <input type="text" id="securityCode" data-checkout="securityCode" onselectstart="return false" onpaste="return false" onCopy="return false" onCut="return false" onDrag="return false" onDrop="return false" autocomplete=off />
-        </p>
-        <p>
-            <label for="installments">Cuotas</label>
-            <select id="installments" class="form-control" name="installments"></select>
-        </p>
-        <p>
-            <label for="docType">Tipo de documento</label>
-            <select id="docType" data-checkout="docType"></select>
-        </p>
-        <p>
-            <label for="docNumber">Número de documento</label>
-            <input type="text" id="docNumber" data-checkout="docNumber"/>
-        </p>
-        <p>
-            <label for="email">Email</label>
-            <input type="email" id="email" name="email" value="test@test.com"/>
-        </p>  
-        <input type="hidden" name="payment_method_id" id="payment_method_id"/>
-        <input type="submit" value="Pagar"/>
-    </fieldset>
-</form>
+    <form action="/procesar-pago" method="POST">
+        <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>">
+        </script>
+    </form>
 
 
 

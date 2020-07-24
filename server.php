@@ -4,6 +4,23 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+// SDK de Mercado Pago
+require __DIR__ .  '/vendor/autoload.php';
+
+//// Credenciales
+MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN'); //TODO: generar y enlazar token de acceso
+
+////// Crear objeto de preferencia
+$preference = new MercadoPago\Preference();
+
+//////// Crear un ítem en la preferencia
+$item = new MercadoPago\Item();
+$item->title = 'Suscripcion Club Generate';
+$item->quantity = 1;
+$item->unit_price = 75.56; //TODO: poner precio real
+$preference->items = array($item);
+$preference->save();
+
 session_start();
 
 // Inicializar variables
