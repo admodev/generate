@@ -8,7 +8,7 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./build/css/beneficios-proyectos.css" />
+    <link rel="stylesheet" href="./css/beneficios-proyectos.min.css" />
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
@@ -19,28 +19,29 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body class="background-proyectos" style="width: 100%; height: 100%;">
-    <a href="index.php"><i class="fas fa-arrow-up" style="float: right; color: #fff; font-size: 16px; margin-top: 60px; margin-right: 120px;"></i>
-        <p style="float: right; color: #fff; font-size: 14px; text-transform: uppercase; margin-top: 58px; margin-right: -72px;">Inicio</p>
-    </a>
-    <div class="titulo-beneficios-uno d-flex flex-row">
-        <img src="./img/tres-beneficios.png" alt="uno" style="width: 100px; margin-top: 20px; margin-left: 20px;">
-        <h1 class="text-white text-uppercase" style="margin-top: 58px;">Proyectos</h1>
+<body>
+    <div class="backgroundImg">
+        <a href="index.php"><i class="fas fa-arrow-up" style="float: right; color: #fff; font-size: 16px; margin-top: 60px; margin-right: 120px;"></i>
+            <p style="float: right; color: #fff; font-size: 14px; text-transform: uppercase; margin-top: 58px; margin-right: -72px;">Inicio</p>
+        </a>
+        <div class="titulo-beneficios-uno d-flex flex-row">
+            <img src="./img/tres-beneficios.png" alt="uno" style="width: 100px; margin-top: 20px; margin-left: 20px;">
+            <h1 class="text-white text-uppercase" style="margin-top: 58px;">Proyectos</h1>
+        </div>
+        <div class="fotos">
+            <img src="./img/proyectos-foto-uno.png" alt="foto-proyectos-uno" class="foto-proyectos-uno">
+            <img src="./img/proyectos-foto-dos.png" alt="foto-proyectos-dos" class="foto-proyectos-dos">
+            <img src="./img/proyectos-foto-tres.png" alt="foto-proyectos-tres" class="foto-proyectos-tres">
+        </div>
+        <div class="texto">
+            <h3 class="text-white h3-proyectos-uno">PANIFICADORA <br> ZONA SUR</h3>
+            <p class="text-white mt-4 p-proyectos-uno">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none a-proyectos-uno">+ INFO</a>
+            <h3 class="text-white h3-proyectos-dos">MUDANZAS EN <br> TODO EL PAÍS</h3>
+            <p class="text-white mt-4 p-proyectos-dos">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none a-proyectos-dos">+ INFO</a>
+            <h3 class="text-white h3-proyectos-tres">DISTRIBUIDORA <br> DE INDUMENTARIA</h3>
+            <p class="text-white mt-4 p-proyectos-tres">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none a-proyectos-tres">+ INFO</a>
+        </div>
     </div>
-    <div class="fotos">
-        <img src="./img/proyectos-foto-uno.png" alt="foto-proyectos-uno" class="foto-proyectos-uno">
-        <img src="./img/proyectos-foto-dos.png" alt="foto-proyectos-dos" class="foto-proyectos-dos">
-        <img src="./img/proyectos-foto-tres.png" alt="foto-proyectos-tres" class="foto-proyectos-tres">
-    </div>
-    <div class="texto">
-        <h3 class="text-white" class="h3-proyectos-uno">PANIFICADORA <br> ZONA SUR</h3>
-        <p class="text-white mt-4" style="margin-left: 140px;">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none" style="margin-left: 370px;">+ INFO</a>
-        <h3 class="text-white" style="margin-top: -400px; margin-left: 520px;">MUDANZAS EN <br> TODO EL PAÍS</h3>
-        <p class="text-white mt-4" style="margin-left: 520px;">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none" style="margin-left: 740px;">+ INFO</a>
-        <h3 class="text-white" style="margin-top: -400px; margin-left: 890px;">DISTRIBUIDORA <br> DE INDUMENTARIA</h3>
-        <p class="text-white mt-4" style="margin-left: 890px;">Lorem, ipsum dolor sit amet consectetur <br> adipisicing elit. Quas aperiam possimus <br> voluptate quo cupiditate modi tempora <br> voluptatum rem et consectetur, nostrum <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> at eaque culpa tempore earum, itaqu. <br> Lorem ipsum.</p> <a href="#" class="text-white text-decoration-none" style="float: right; margin-top: 10px; margin-right: 125px;">+ INFO</a>
-    </div>
-
 
 
     <!-- Funciones JS -->

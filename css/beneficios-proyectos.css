@@ -1,9 +1,79 @@
-.background-proyectos {
+/* Full screen background image */
+.backgroundImg {
   background-image: url(../img/proyectos-background.png);
-  background-size: 100% 100%;
-  -webkit-background-size: 100% 100%;
-  -moz-background-size: 100% 100%;
-  -o-background-size: 100% 100%;
-  background-repeat: no-repeat;
   background-position: center center;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  /* Preservar aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.foto-proyectos-uno {
+  width: 275px;
+  height: 180px;
+  margin-top: 50px;
+  margin-left: 145px;
+}
+
+.foto-proyectos-dos {
+  width: 275px;
+  height: 180px;
+  margin-top: 50px;
+  margin-left: 95px;
+}
+
+.foto-proyectos-tres {
+  width: 275px;
+  height: 180px;
+  float: right;
+  margin-top: 50px;
+  margin-right: 110px;
+}
+
+.h3-proyectos-uno {
+  margin-top: 25px;
+  margin-left: 140px;
+}
+
+.p-proyectos-uno {
+  margin-top: 25px;
+  margin-left: 140px;
+}
+
+.a-proyectos-uno {
+  margin-top: 25px;
+  margin-left: 370px;
+}
+
+.h3-proyectos-dos {
+  margin-top: -355px;
+  margin-left: 520px;
+}
+
+.p-proyectos-dos {
+  margin-top: 25px;
+  margin-left: 520px;
+}
+
+.a-proyectos-dos {
+  margin-left: 740px;
+}
+
+.h3-proyectos-tres {
+  margin-top: -350px;
+  margin-left: 890px;
+}
+
+.p-proyectos-tres {
+  margin-left: 890px;
+}
+
+.a-proyectos-tres {
+  float: right;
+  margin-top: 10px;
+  margin-right: 125px;
 }
