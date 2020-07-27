@@ -4,6 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
 
@@ -20,8 +22,6 @@ $item->quantity = 1;
 $item->unit_price = 75.56; //TODO: poner precio real
 $preference->items = array($item);
 $preference->save();
-
-session_start();
 
 // Inicializar variables
 
@@ -75,7 +75,9 @@ if (isset($_POST['reg_user'])) {
     $profesion = mysqli_real_escape_string($con, $_POST['profesion']);
     $referido_por = mysqli_real_escape_string($con, $_POST['referido_por']);
     $num_socio_ref = mysqli_real_escape_string($con, $_POST['num_socio_ref']);
+    $num_socio_ref_input = mysqli_real_escape_string($con, $_POST['num_socio_ref_input']);
     $llegada_club = mysqli_real_escape_string($con, $_POST['llegada_club']);
+    $llegada_club_input = mysqli_real_escape_string($con, $_POST['llegada_club_input']);
     $ultimos_tres_exp = mysqli_real_escape_string($con, $_POST['ultimos_tres_exp']);
 
     // Validación de formulario
@@ -167,7 +169,7 @@ if (isset($_POST['reg_user'])) {
 
     if (count($errors) == 0) {
         $password = md5($password_1);
-        $query = "INSERT INTO users (username, email, password, sponsor, nombre, apellido, dni, edad, sexo, telefono, direccion, pais, provincia_estado, codigo_postal, estudios, profesion, referido_por, num_socio_ref, num_socio_ref_input, llegada_club, llegada_club_inpyt, ultimos_tres_exp) 
+        $query = "INSERT INTO users (username, email, password, sponsor, nombre, apellido, dni, edad, sexo, telefono, direccion, pais, provincia_estado, codigo_postal, estudios, profesion, referido_por, num_socio_ref, num_socio_ref_input, llegada_club, llegada_club_input, ultimos_tres_exp) 
             VALUES('$username', '$email', '$password', '$sponsor', '$nombre', '$apellido', '$dni', '$edad', '$sexo', '$telefono', '$direccion', '$pais', '$provincia_estado', '$codigo_postal', '$estudios', '$profesion', '$referido_por', '$num_socio_ref', '$num_socio_ref_input', '$llegada_club', '$llegada_club_input', '$ultimos_tres_exp')";
         mysqli_query($con, $query);
         $_SESSION['username'] = $username;
