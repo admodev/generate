@@ -1,10 +1,11 @@
-﻿<?php
+﻿<?php include('../server.php');
 
-require '../server.php';
+if(is_null($_SESSION['username'])) {
+    echo "Debes estar logueado para ingresar aqui!";
+    header("Location: ../index.php");
+}
 
 ?>
-
-
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 
@@ -46,7 +47,7 @@ require '../server.php';
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Último Acceso : <?php echo $_COOKIE['lasttime']; ?> &nbsp; <a href="<?php echo session_unset(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesión</a> </div>
+font-size: 16px;"> Bienvenido/a : <?php echo $_SESSION['username']; ?> &nbsp; <a href="<?php echo session_destroy(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesión</a> </div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">

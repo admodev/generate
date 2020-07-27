@@ -174,7 +174,7 @@ if (isset($_POST['reg_user'])) {
         mysqli_query($con, $query);
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "Ahora estás logueado!";
-        header('location: index.php');
+        header("Location: confirmacion.php");
         ini_set('session.cookie_lifetime',  10800);
     }
 }
@@ -198,7 +198,7 @@ if (isset($_POST['login_user'])) {
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Ahora estás logueado!";
-            header('location: index.php');
+            header("Location: ./panel/index.php");
             ini_set('session.cookie_lifetime',  10800);
         } else {
             array_push($errors, "Combinacion de usuario y clave incorrecta");
