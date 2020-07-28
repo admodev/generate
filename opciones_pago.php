@@ -30,13 +30,16 @@
       <div class="card-body">
         <ul class="nav card-header d-flex flex-lg-row justify-content-around">
           <li class="nav-item">
-            <a class="nav-link" href="pagos.php">Efectivo</a>
+            <h4>Efectivo</h4>
+            <a class="nav-link" href="pagos.php">Pagar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pagos.php">Tarjeta de Credito/Debito</a>
+            <h4>Tarjeta de Credito/Debito</h4>
+            <a class="nav-link" href="pagos.php">Pagar</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="pagos.php">Transferencia Bancaria</a>
+            <h4>Transferencia Bancaria</h4>
+            <a class="nav-link" href="pagos.php">Pagar</a>
           </li>
         </ul>
       </div>

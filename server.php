@@ -44,6 +44,8 @@ $referido_por = "";
 $num_socio_ref = "";
 $llegada_club = "";
 $ultimos_tres_exp = "";
+$activationcode = md5($email.time());
+$status = 0;
 $errors = array();
 
 // Conectarse a la base de datos
@@ -169,12 +171,25 @@ if (isset($_POST['reg_user'])) {
 
     if (count($errors) == 0) {
         $password = md5($password_1);
-        $query = "INSERT INTO users (username, email, password, sponsor, nombre, apellido, dni, edad, sexo, telefono, direccion, pais, provincia_estado, codigo_postal, estudios, profesion, referido_por, num_socio_ref, num_socio_ref_input, llegada_club, llegada_club_input, ultimos_tres_exp) 
-            VALUES('$username', '$email', '$password', '$sponsor', '$nombre', '$apellido', '$dni', '$edad', '$sexo', '$telefono', '$direccion', '$pais', '$provincia_estado', '$codigo_postal', '$estudios', '$profesion', '$referido_por', '$num_socio_ref', '$num_socio_ref_input', '$llegada_club', '$llegada_club_input', '$ultimos_tres_exp')";
+        $query = "INSERT INTO users (username, email, password, sponsor, nombre, apellido, dni, edad, sexo, telefono, direccion, pais, provincia_estado, codigo_postal, estudios, profesion, referido_por, num_socio_ref, num_socio_ref_input, llegada_club, llegada_club_input, ultimos_tres_exp, activationcode, status) 
+            VALUES('$username', '$email', '$password', '$sponsor', '$nombre', '$apellido', '$dni', '$edad', '$sexo', '$telefono', '$direccion', '$pais', '$provincia_estado', '$codigo_postal', '$estudios', '$profesion', '$referido_por', '$num_socio_ref', '$num_socio_ref_input', '$llegada_club', '$llegada_club_input', '$ultimos_tres_exp', '$activationcode', '$status')";
         mysqli_query($con, $query);
+        $to=$email;
+        $msg= "Gracias por registrarte!.";
+        $subject="Email verification (Generate Argentina)";
+        $headers .= "MIME-Version: 1.0"."\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
+        $headers .= 'From:GenerateArgentina | Web <generateargentina.com.ar>'."\r\n";
+        $ms.="<html></body><div><div>Estimado $name,</div></br></br>";
+        $ms.="<div style='padding-top:8px;'>Por favor haz click en el enlace para confirmar tu cuenta, muchas gracias.</div>
+            <div style='padding-top:10px;'><a href='http://localhost/generate/email_verification.php?code=$activationcode'>Click Aqui</a></div>
+            <div style='padding-top:4px;'>Powered by <a href='generateargentina.com.ar'>generateargentina.com.ar</a></div></div>
+            </body></html>";
+        mail($to,$subject,$ms,$headers);
+        echo "<script>alert('Registro completo, por favor corrobora tu id de email.');</script>";
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "Ahora estás logueado!";
-        header("Location: confirmacion.php");
+        header("Location: login.php");
         ini_set('session.cookie_lifetime',  10800);
     }
 }

@@ -29,7 +29,7 @@
     </div>
     <div class="container d-flex flex-column align-items-center justify-content-center">
         <h1 class="text-white titulo-inicio">Iniciar</h1>
-        <form method="post" action="login.php" class="column login-form d-flex flex-column justify-content-center">
+        <form action="" method="post" class="column login-form d-flex flex-column justify-content-center">
             <?php include('errors.php'); ?>
             <div class="row">
                 <i class="fas fa-user mr-2 icono-user"></i> <input class="form-control m-2 input-user" type="text" name="username" placeholder="Usuario">
