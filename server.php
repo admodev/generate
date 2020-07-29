@@ -19,7 +19,7 @@ $preference = new MercadoPago\Preference();
 $item = new MercadoPago\Item();
 $item->title = 'Suscripcion Club Generate';
 $item->quantity = 1;
-$item->unit_price = 75.56; //TODO: poner precio real
+$item->unit_price = 2000.56; //TODO: poner precio real
 $preference->items = array($item);
 $preference->save();
 
@@ -188,8 +188,11 @@ if (isset($_POST['reg_user'])) {
         mail($to,$subject,$ms,$headers);
         echo "<script>alert('Registro completo, por favor corrobora tu id de email.');</script>";
         $_SESSION['username'] = $username;
+        $_SESSION['nombre'] = $nombre;
+        $_SESSION['apellido'] = $apellido;
+        $_SESSION['dni'] = $dni;
         $_SESSION['success'] = "Ahora estás logueado!";
-        header("Location: login.php");
+        header("Location: confirmacion.php");
         ini_set('session.cookie_lifetime',  10800);
     }
 }
@@ -212,6 +215,9 @@ if (isset($_POST['login_user'])) {
         $results = mysqli_query($con, $query);
         if (mysqli_num_rows($results) == 1) {
             $_SESSION['username'] = $username;
+            $_SESSION['nombre'] = $nombre;
+            $_SESSION['apellido'] = $apellido;
+            $_SESSION['dni'] = $dni;
             $_SESSION['success'] = "Ahora estás logueado!";
             header("Location: ./panel/index.php");
             ini_set('session.cookie_lifetime',  10800);

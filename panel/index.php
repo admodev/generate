@@ -1,6 +1,6 @@
 ﻿<?php
 
-include('server.php');
+include('../server.php');
 
 ?>
 
@@ -94,8 +94,12 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?>  <a 
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Blank Page</h2>
-                        <h5>Welcome Jhon Deo , Love to see you back. </h5>
+                        <h2>Menú Principal</h2>
+                        <div class="container">
+                            <p>
+Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore <br></br> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd <br></br> no sea takimata sanctus est Lorem ipsum dolor sit amet.
+</p>
+                        </div>
 
                     </div>
                 </div>
