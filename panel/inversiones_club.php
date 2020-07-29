@@ -9,8 +9,6 @@
     <link href="assets/css/bootstrap.css" rel="stylesheet" />
     <!-- FONTAWESOME STYLES-->
     <link href="assets/css/font-awesome.css" rel="stylesheet" />
-    <!-- MORRIS CHART STYLES-->
-    <link href="assets/js/morris/morris-0.4.3.min.css" rel="stylesheet" />
     <!-- CUSTOM STYLES-->
     <link href="assets/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
@@ -53,7 +51,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         <a href="tab-panel.php"><i class="fa fa-qrcode fa-3x"></i> Tabs & Panels</a>
                     </li>
                     <li>
-                        <a class="active-menu" href="chart.php"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
+                        <a href="chart.php"><i class="fa fa-bar-chart-o fa-3x"></i> Morris Charts</a>
                     </li>
                     <li>
                         <a href="table.php"><i class="fa fa-table fa-3x"></i> Table Examples</a>
@@ -91,7 +89,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                         </ul>
                     </li>
                     <li>
-                        <a href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
+                        <a class="active-menu" href="blank.html"><i class="fa fa-square-o fa-3x"></i> Blank Page</a>
                     </li>
                 </ul>
 
@@ -103,7 +101,7 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
             <div id="page-inner">
                 <div class="row">
                     <div class="col-md-12">
-                        <h2>Morris Charts</h2>
+                        <h2>Blank Page</h2>
                         <h5>Welcome Jhon Deo , Love to see you back. </h5>
 
                     </div>
@@ -111,57 +109,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
                 <!-- /. ROW  -->
                 <hr />
 
-                <div class="row">
-
-
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Bar Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-bar-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Area Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-area-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /. ROW  -->
-                <div class="row">
-
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Donut Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-donut-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12">
-                        <div class="panel panel-default">
-                            <div class="panel-heading">
-                                Line Chart Example
-                            </div>
-                            <div class="panel-body">
-                                <div id="morris-line-chart"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                </div>
-                <!-- /. ROW  -->
             </div>
             <!-- /. PAGE INNER  -->
         </div>
@@ -175,9 +122,6 @@ font-size: 16px;"> Last access : 30 May 2014 &nbsp; <a href="#" class="btn btn-d
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
-    <!-- MORRIS CHART SCRIPTS -->
-    <script src="assets/js/morris/raphael-2.1.0.min.js"></script>
-    <script src="assets/js/morris/morris.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
 

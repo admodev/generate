@@ -179,7 +179,7 @@ if (isset($_POST['reg_user'])) {
         $subject="Email verification (Generate Argentina)";
         $headers .= "MIME-Version: 1.0"."\r\n";
         $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
-        $headers .= 'From:GenerateArgentina | Web <generateargentina.com.ar>'."\r\n";
+        $headers .= 'From:generateargentina@yahoo.com | Web <generateargentina.com.ar>'."\r\n";
         $ms.="<html></body><div><div>Estimado $name,</div></br></br>";
         $ms.="<div style='padding-top:8px;'>Por favor haz click en el enlace para confirmar tu cuenta, muchas gracias.</div>
             <div style='padding-top:10px;'><a href='http://localhost/generate/email_verification.php?code=$activationcode'>Click Aqui</a></div>
