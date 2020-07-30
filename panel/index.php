@@ -19,6 +19,7 @@ include('../server.php');
     <link href="assets/css/custom.css" rel="stylesheet" />
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
+    <link href="assets/css/estilos-index.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -93,29 +94,52 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?>  <a 
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
-                    <div class="container">
                         <h2>Menú Principal</h2>
-                        <div class="container">
-                        <div class="card" style="width: 18rem;">
+<div class="menuGrid">
+                        <div class="card itemUno" style="width: 18rem;">
   <div class="card-body">
     <h3 class="card-title">Mis Inversiones</h3>
     <a href="mis_inversiones.php" class="btn btn-primary">Click Aquí</a>
   </div>
 </div>
-<div class="card" style="width: 18rem;">
+<div class="card itemDos" style="width: 18rem;">
 <div class="card-body">
 <h3 class="card-title">Mis Créditos</h3>
 <a href="mis_inversiones.php" class="btn btn-primary">Click Aquí</a>
 </div>
 </div>
-<div class="card" style="width: 18rem;">
+<div class="card itemTres" style="width: 18rem;">
 <div class="card-body">
 <h3 class="card-title">Mis Pagos</h3>
 <a href="mis_pagos.php" class="btn btn-primary">Click Aquí</a>
 </div>
 </div>
-                    </div>
-                </div>
+<div class="card itemCuatro" style="width: 18rem;">
+<div class="card-body">
+<h3 class="card-title">Oportunidades de Negocio</h3>
+<a href="oportunidades_negocio.php" class="btn btn-primary">Click Aquí</a>
+</div>
+</div>
+<div class="card itemCinco" style="width: 18rem;">
+<div class="card-body">
+<h3 class="card-title">Mi Red</h3>
+<a href="mi_red.php" class="btn btn-primary">Click Aquí</a>
+</div>
+</div>
+<div class="card itemSeis" style="width: 18rem;">
+<div class="card-body">
+<h3 class="card-title">Mi Billetera</h3>
+<a href="mi_billetera.php" class="btn btn-primary">Click Aquí</a>
+</div>
+</div>
+<div class="card itemSiete" style="width: 18rem;">
+<div class="card-body">
+<h3 class="card-title">Información del Club</h3>
+<a href="informacion_club.php" class="btn btn-primary">Click Aquí</a>
+</div>
+</div>
+<!-- /. MENUGRID -->
+</div>
                 <!-- /. ROW  -->
                 <hr />
 
