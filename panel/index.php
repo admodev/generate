@@ -93,14 +93,15 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?>  <a 
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
-                    <div class="col-md-12">
+                    <div class="container">
                         <h2>Menú Principal</h2>
                         <div class="container">
-                            <p>
-Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore <br></br> magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd <br></br> no sea takimata sanctus est Lorem ipsum dolor sit amet.
-</p>
-                        </div>
-
+                        <div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h3 class="card-title">Mis Inversiones</h3>
+    <a href="mis_inversiones.php" class="btn btn-primary">Click Aquí</a>
+  </div>
+</div>
                     </div>
                 </div>
                 <!-- /. ROW  -->
