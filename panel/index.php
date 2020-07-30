@@ -102,6 +102,18 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?>  <a 
     <a href="mis_inversiones.php" class="btn btn-primary">Click Aquí</a>
   </div>
 </div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<h3 class="card-title">Mis Créditos</h3>
+<a href="mis_inversiones.php" class="btn btn-primary">Click Aquí</a>
+</div>
+</div>
+<div class="card" style="width: 18rem;">
+<div class="card-body">
+<h3 class="card-title">Mis Pagos</h3>
+<a href="mis_pagos.php" class="btn btn-primary">Click Aquí</a>
+</div>
+</div>
                     </div>
                 </div>
                 <!-- /. ROW  -->
