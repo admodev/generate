@@ -187,10 +187,7 @@ if (isset($_POST['reg_user'])) {
             </body></html>";
         mail($to,$subject,$ms,$headers);
         echo "<script>alert('Registro completo, por favor corrobora tu id de email.');</script>";
-        $_SESSION['username'] = $username;
-        $_SESSION['nombre'] = $nombre;
-        $_SESSION['apellido'] = $apellido;
-        $_SESSION['dni'] = $dni;
+        $_SESSION['username'] = $username; 
         $_SESSION['success'] = "Ahora estás logueado!";
         header("Location: confirmacion.php");
         ini_set('session.cookie_lifetime',  10800);
@@ -209,15 +206,16 @@ if (isset($_POST['login_user'])) {
         array_push($errors, "La clave es requerida");
     }
 
-    if (count($errors) == 0) {
+    if ($status == 0) {
+       die("Aun no activaste tu cuenta, activala para poder loguearte..."); 
+    }
+
+    if (count($errors) == 0 && $status == 1) {
         $password = md5($password);
         $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-        $results = mysqli_query($con, $query);
+  	    $results = mysqli_query($con, $query);
         if (mysqli_num_rows($results) == 1) {
-            $_SESSION['username'] = $username;
-            $_SESSION['nombre'] = $nombre;
-            $_SESSION['apellido'] = $apellido;
-            $_SESSION['dni'] = $dni;
+            $_SESSION['username'] = $username; 
             $_SESSION['success'] = "Ahora estás logueado!";
             header("Location: ./panel/index.php");
             ini_set('session.cookie_lifetime',  10800);
