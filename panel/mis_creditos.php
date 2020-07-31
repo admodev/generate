@@ -2,6 +2,9 @@
 
 include('../server.php');
 
+$queryCreditos = "SELECT id, composicion, saldo, activos, cancelados FROM creditos WHERE id >= 1 AND username='$username'";
+$resultCreditos = mysqli_query($con, $queryCreditos);
+
 ?>
 
 <!DOCTYPE html>
@@ -94,7 +97,32 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
         <div id="page-wrapper">
             <div id="page-inner">
                 <div class="row">
-                    <h3>Mis Créditos</h3>
+                    <h3 style="margin: 25px;">Mis Créditos</h3>
+                    <div class="misCreditos">
+                        <div class="creditos">
+                            <?php
+                            echo "<table border='2' style='margin: 25px;'>
+                            <tr>
+                            <th>id</th>
+                            <th>composicion</th>
+                            <th>saldo</th>
+                            <th>activos</th>
+                            <th>cancelados</th>
+                            </tr>";
+
+                            while ($row = mysqli_fetch_array($resultCreditos)) {
+                                echo "<tr>";
+                                echo "<td>" . $row['id'] . "</td>";
+                                echo "<td>" . $row['composicion'] . "</td>";
+                                echo "<td>" . $row['saldo'] . "</td>";
+                                echo "<td>" . $row['activos'] . "</td>";
+                                echo "<td>" . $row['cancelados'] . "</td>";
+                                echo "</tr>";
+                            }
+                            echo "</table>";
+                            ?>
+                        </div>
+                    </div>
                 </div>
                 <!-- /. ROW  -->
                 <hr />
