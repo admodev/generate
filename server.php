@@ -210,11 +210,13 @@ if (isset($_POST['login_user'])) {
        die("Aun no activaste tu cuenta, activala para poder loguearte..."); 
     }
 
-    if (count($errors) == 0 && $status == 1) {
+    if (count($errors) == 0 && $statusResult == 1) {
         $password = md5($password);
         $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-  	    $results = mysqli_query($con, $query);
-        if (mysqli_num_rows($results) == 1) {
+        $results = mysqli_query($con, $query);
+        $statusCheckQuery = "SELECT * FROM users WHERE username='$username' AND status=1";
+        $statusResult = mysqli_query($con, $statusCheckQuery);
+        if (mysqli_num_rows($results) == 1 && mysqli_num_rows($statusResult) == 1) {
             $_SESSION['username'] = $username; 
             $_SESSION['success'] = "Ahora estás logueado!";
             header("Location: ./panel/index.php");
