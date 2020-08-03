@@ -1,56 +1,51 @@
 <?php
 
+use phpDocumentor\Reflection\Location;
+
 ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 session_start();
+// SDK de Mercado Pago
+require __DIR__ .  '/vendor/autoload.php';
 
-class MercadoPago {
-    public function setMercadoPago() {
-        // SDK de Mercado Pago
-        require __DIR__ .  '/vendor/autoload.php';
+//// Credenciales
+MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN'); //TODO: generar y enlazar token de acceso
 
-        //// Credenciales
-        MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN'); //TODO: generar y enlazar token de acceso
+////// Crear objeto de preferencia
+$preference = new MercadoPago\Preference();
 
-        ////// Crear objeto de preferencia
-        $preference = new MercadoPago\Preference();
+//////// Crear un ítem en la preferencia
+$item = new MercadoPago\Item();
+$item->title = 'Suscripcion Club Generate';
+$item->quantity = 1;
+$item->unit_price = 2000.56; //TODO: poner precio real
+$preference->items = array($item);
+$preference->save();
 
-        //////// Crear un ítem en la preferencia
-        $item = new MercadoPago\Item();
-        $item->title = 'Suscripcion Club Generate';
-        $item->quantity = 1;
-        $item->unit_price = 2000.56; //TODO: poner precio real
-        $preference->items = array($item);
-        $preference->save();
-    } 
-}
-
-function sanitizarInputs() {
-    $username = "";
-    $email = "";
-    $sponsor = "";
-    $nombre = "";
-    $apellido = "";
-    $dni = "";
-    $edad = "";
-    $sexo = "";
-    $telefono = "";
-    $direccion = "";
-    $pais = "";
-    $provincia_estado = "";
-    $codigo_postal = "";
-    $estudios = "";
-    $profesion = "";
-    $referido_por = "";
-    $num_socio_ref = "";
-    $llegada_club = "";
-    $ultimos_tres_exp = "";
-    $activationcode = md5($email.time());
-    $status = 0;
-    $errors = array();
-}
+$username = "";
+$email = "";
+$sponsor = "";
+$nombre = "";
+$apellido = "";
+$dni = "";
+$edad = "";
+$sexo = "";
+$telefono = "";
+$direccion = "";
+$pais = "";
+$provincia_estado = "";
+$codigo_postal = "";
+$estudios = "";
+$profesion = "";
+$referido_por = "";
+$num_socio_ref = "";
+$llegada_club = "";
+$ultimos_tres_exp = "";
+$activationcode = md5($email . time());
+$status = 0;
+$errors = array();
 
 // Conectarse a la base de datos
 
@@ -171,6 +166,17 @@ if (isset($_POST['reg_user'])) {
         }
     }
 
+    // Verificar numero de referente
+
+    $check_ref = "SELECT num_socio_ref_input FROM users WHERE num_socio_ref_input LIKE '%{$num_socio_ref_input}%'";
+
+    $check_ref_query = mysqli_query($con, $check_ref);
+
+    if (is_null($check_ref_query)) {
+        array_push($errors, "Numero de referente invalido");
+        header('location: lista_referentes.php');
+    }
+
     // Registra al usuario si no hay errores en el formulario ni la base de datos
 
     if (count($errors) == 0) {
@@ -178,20 +184,20 @@ if (isset($_POST['reg_user'])) {
         $query = "INSERT INTO users (username, email, password, sponsor, nombre, apellido, dni, edad, sexo, telefono, direccion, pais, provincia_estado, codigo_postal, estudios, profesion, referido_por, num_socio_ref, num_socio_ref_input, llegada_club, llegada_club_input, ultimos_tres_exp, activationcode, status) 
             VALUES('$username', '$email', '$password', '$sponsor', '$nombre', '$apellido', '$dni', '$edad', '$sexo', '$telefono', '$direccion', '$pais', '$provincia_estado', '$codigo_postal', '$estudios', '$profesion', '$referido_por', '$num_socio_ref', '$num_socio_ref_input', '$llegada_club', '$llegada_club_input', '$ultimos_tres_exp', '$activationcode', '$status')";
         mysqli_query($con, $query);
-        $to=$email;
-        $msg= "Gracias por registrarte!.";
-        $subject="Email verification (Generate Argentina)";
-        $headers .= "MIME-Version: 1.0"."\r\n";
-        $headers .= 'Content-type: text/html; charset=iso-8859-1'."\r\n";
-        $headers .= 'From:generateargentina@yahoo.com | Web <generateargentina.com.ar>'."\r\n";
-        $ms.="<html></body><div><div>Estimado $name,</div></br></br>";
-        $ms.="<div style='padding-top:8px;'>Por favor haz click en el enlace para confirmar tu cuenta, muchas gracias.</div>
+        $to = $email;
+        $msg = "Gracias por registrarte!.";
+        $subject = "Email verification (Generate Argentina)";
+        $headers .= "MIME-Version: 1.0" . "\r\n";
+        $headers .= 'Content-type: text/html; charset=iso-8859-1' . "\r\n";
+        $headers .= 'From:generateargentina@yahoo.com | Web <generateargentina.com.ar>' . "\r\n";
+        $ms .= "<html></body><div><div>Estimado $name,</div></br></br>";
+        $ms .= "<div style='padding-top:8px;'>Por favor haz click en el enlace para confirmar tu cuenta, muchas gracias.</div>
             <div style='padding-top:10px;'><a href='http://localhost/generate/email_verification.php?code=$activationcode'>Click Aqui</a></div>
             <div style='padding-top:4px;'>Powered by <a href='generateargentina.com.ar'>generateargentina.com.ar</a></div></div>
             </body></html>";
-        mail($to,$subject,$ms,$headers);
+        mail($to, $subject, $ms, $headers);
         echo "<script>alert('Registro completo, por favor corrobora tu id de email.');</script>";
-        $_SESSION['username'] = $username; 
+        $_SESSION['username'] = $username;
         $_SESSION['success'] = "Ahora estás logueado!";
         header("Location: confirmacion.php");
         ini_set('session.cookie_lifetime',  10800);
@@ -211,7 +217,7 @@ if (isset($_POST['login_user'])) {
     }
 
     if ($status == 0) {
-        die("Aun no activaste tu cuenta, activala para poder loguearte..."); 
+        die("Aun no activaste tu cuenta, activala para poder loguearte...");
     }
 
     if (count($errors) == 0 && $statusResult == 1) {
@@ -221,7 +227,7 @@ if (isset($_POST['login_user'])) {
         $statusCheckQuery = "SELECT * FROM users WHERE username='$username' AND status=1";
         $statusResult = mysqli_query($con, $statusCheckQuery);
         if (mysqli_num_rows($results) == 1 && mysqli_num_rows($statusResult) == 1) {
-            $_SESSION['username'] = $username; 
+            $_SESSION['username'] = $username;
             $_SESSION['success'] = "Ahora estás logueado!";
             header("Location: ./panel/index.php");
             ini_set('session.cookie_lifetime',  10800);
