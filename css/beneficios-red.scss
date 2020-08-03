@@ -1,5 +1,5 @@
 .backgroundRed {
-  background-image: url(../img/MiRed.png);
+  background: url(../img/MiRed.png) no-repeat center center fixed;
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 100% 100%;
@@ -10,4 +10,21 @@
   /* Preservar aspet ratio */
   min-width: 100%;
   min-height: 100%;
+}
+
+.fa-arrow-up {
+  float: right;
+  color: #fff;
+  font-size: 16px;
+  margin-top: 60px;
+  margin-right: 120px;
+}
+
+.p-inicio {
+  float: right;
+  color: #fff;
+  font-size: 14px;
+  text-transform: uppercase;
+  margin-top: 58px;
+  margin-right: -72px;
 }

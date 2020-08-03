@@ -19,9 +19,10 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
-    <div class="backgroundRed"><br></div>
-
+<body class="backgroundRed">
+    <a href="index.php"><i class="fas fa-arrow-up text-white"></i>
+        <p class="p-inicio text-white">Inicio</p>
+    </a>
 
 
     <!-- Funciones JS -->
