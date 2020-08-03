@@ -27,30 +27,30 @@ class MercadoPago {
     } 
 }
 
-// Inicializar variables
-
-$username = "";
-$email = "";
-$sponsor = "";
-$nombre = "";
-$apellido = "";
-$dni = "";
-$edad = "";
-$sexo = "";
-$telefono = "";
-$direccion = "";
-$pais = "";
-$provincia_estado = "";
-$codigo_postal = "";
-$estudios = "";
-$profesion = "";
-$referido_por = "";
-$num_socio_ref = "";
-$llegada_club = "";
-$ultimos_tres_exp = "";
-$activationcode = md5($email.time());
-$status = 0;
-$errors = array();
+function sanitizarInputs() {
+    $username = "";
+    $email = "";
+    $sponsor = "";
+    $nombre = "";
+    $apellido = "";
+    $dni = "";
+    $edad = "";
+    $sexo = "";
+    $telefono = "";
+    $direccion = "";
+    $pais = "";
+    $provincia_estado = "";
+    $codigo_postal = "";
+    $estudios = "";
+    $profesion = "";
+    $referido_por = "";
+    $num_socio_ref = "";
+    $llegada_club = "";
+    $ultimos_tres_exp = "";
+    $activationcode = md5($email.time());
+    $status = 0;
+    $errors = array();
+}
 
 // Conectarse a la base de datos
 
