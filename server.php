@@ -6,22 +6,26 @@ error_reporting(E_ALL);
 
 session_start();
 
-// SDK de Mercado Pago
-require __DIR__ .  '/vendor/autoload.php';
+class MercadoPago {
+    public function setMercadoPago() {
+        // SDK de Mercado Pago
+        require __DIR__ .  '/vendor/autoload.php';
 
-//// Credenciales
-MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN'); //TODO: generar y enlazar token de acceso
+        //// Credenciales
+        MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN'); //TODO: generar y enlazar token de acceso
 
-////// Crear objeto de preferencia
-$preference = new MercadoPago\Preference();
+        ////// Crear objeto de preferencia
+        $preference = new MercadoPago\Preference();
 
-//////// Crear un ítem en la preferencia
-$item = new MercadoPago\Item();
-$item->title = 'Suscripcion Club Generate';
-$item->quantity = 1;
-$item->unit_price = 2000.56; //TODO: poner precio real
-$preference->items = array($item);
-$preference->save();
+        //////// Crear un ítem en la preferencia
+        $item = new MercadoPago\Item();
+        $item->title = 'Suscripcion Club Generate';
+        $item->quantity = 1;
+        $item->unit_price = 2000.56; //TODO: poner precio real
+        $preference->items = array($item);
+        $preference->save();
+    } 
+}
 
 // Inicializar variables
 
@@ -207,7 +211,7 @@ if (isset($_POST['login_user'])) {
     }
 
     if ($status == 0) {
-       die("Aun no activaste tu cuenta, activala para poder loguearte..."); 
+        die("Aun no activaste tu cuenta, activala para poder loguearte..."); 
     }
 
     if (count($errors) == 0 && $statusResult == 1) {

@@ -1,5 +1,8 @@
 {
     "require": {
         "mercadopago/dx-php": "^2.1"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9"
     }
 }
