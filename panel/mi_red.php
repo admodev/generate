@@ -1,6 +1,7 @@
 ﻿<?php
 
 include('../server.php');
+require_once('./backend/red.php');
 
 ?>
 
@@ -96,8 +97,9 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
                 <div class="row">
                     <h3>Mi Red</h3>
                     <div class="escalones">
-<a href="escalon1.php">Escalon 1</a>
-</div>
+                        <a href="escalon1.php">Escalon 1</a>
+                        <?php print_r($escalones); ?>
+                    </div>
                 </div>
                 <!-- /. ROW  -->
                 <hr />
