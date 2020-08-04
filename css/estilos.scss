@@ -251,6 +251,27 @@ video {
   max-width: 180px;
 }
 
+.fondoConfirmacion {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(101, 107, 153, 1) 0%,
+    rgba(63, 146, 191, 1) 55%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+.fondoReferentes {
+  background: rgb(2, 0, 36);
+  background: linear-gradient(
+    90deg,
+    rgba(2, 0, 36, 1) 0%,
+    rgba(101, 107, 153, 1) 0%,
+    rgba(63, 146, 191, 1) 55%,
+    rgba(0, 212, 255, 1) 100%
+  );
+}
+
 /* /ESTILOS */
 
 /* MEDIA QUERIES */

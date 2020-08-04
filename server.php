@@ -227,12 +227,10 @@ if (isset($_POST['login_user'])) {
     }
 
 
-    if (count($errors) == 0 && $statusQueryResults == 1) {
+    if (count($errors) == 0) {
         $password = md5($password);
         $queryLogin = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $resultsLogin = mysqli_query($con, $queryLogin);
-        $statusCheckQueryLogin = "SELECT * FROM users WHERE username='$username' AND status=1";
-        $statusResultLogin = mysqli_query($con, $statusCheckQueryLogin);
         if (mysqli_num_rows($resultsLogin) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Ahora estás logueado!";

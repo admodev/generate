@@ -1,9 +1,9 @@
 <?php
 
-include('server.php');
-
-$queryReferentes = "SELECT id, num_socio_ref_input FROM users WHERE id <= 50";
-$resultReferentes = mysqli_query($con, $queryReferentes);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+include('email_verification.php');
 
 ?>
 <!DOCTYPE html>
@@ -16,8 +16,8 @@ $resultReferentes = mysqli_query($con, $queryReferentes);
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="./css/normalize.css" />
-    <link rel="stylesheet" href="./css/estilos.min.css" />
-    <link rel="stylesheet" href="./css/register.min.css" / <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
+    <link rel="stylesheet" href="./css/register.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
     <link rel="apple-touch-icon" sizes="180x180" href="./img/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon-16x16.png">
@@ -29,29 +29,20 @@ $resultReferentes = mysqli_query($con, $queryReferentes);
 
 <body>
     <div class="background-register">
-        <p class="text-white m-5">Su numero de referente no es correcto, puede que lo haya escrito mal, comuniquese con su referente para comprobar la validez del numero introducido o elija de una lista de numeros de referente similares.</p>
-        <div class="numerosReferente mx-auto">
-            <?php
-            echo "<table border='2' style='margin: 25px;' class='mx-auto p-3 text-white'>
-    <tr>
-    <th>id</th>
-    <th>numero de referente</th>
-    </tr>";
-
-            while ($row = mysqli_fetch_array($resultReferentes)) {
-                echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . "<a href='nuevoNumRef.php' class='text-white'>" . $row['num_socio_ref_input'] . "</a>" . "</td>";
-                echo "</tr>";
-            }
-            echo "</table>";
-            ?>
-        </div>
+        <form action="/procesar-pago" method="POST">
+            <script src="https://www.mercadopago.com.ar/integrations/v1/web-payment-checkout.js" data-preference-id="<?php echo $preference->id; ?>">
+            </script>
+        </form>
     </div>
+
 
 
     <!-- Funciones JS -->
     <script src="./src/index.js"></script>
+    <!-- Script API MERCADOPAGO -->
+    <script src="https://secure.mlstatic.com/sdk/javascript/v1/mercadopago.js"></script>
+    <!-- Script Funciones API MERCADOPAGO -->
+    <script src="./src/apiMercadoPago.js"></script>
     <!-- BOOTSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>

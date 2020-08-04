@@ -1,4 +1,4 @@
-<?php include('server.php'); ?>
+<?php require('server.php'); ?>
 <!DOCTYPE html>
 <html>
 
@@ -27,33 +27,21 @@
     <div class="flecha-derecha">
         <a href="register.php" class="text-white text-decoration-none">Aún no te registraste? <i class="fas fa-arrow-right cuenta-anchor"></i></a>
     </div>
-    <div class="container d-flex flex-column align-items-center justify-content-center">
-        <h1 class="text-white titulo-inicio">Iniciar</h1>
-        <form action="" method="post" class="column login-form d-flex flex-column justify-content-center">
-            <?php include('errors.php'); ?>
-            <div class="row">
-                <i class="fas fa-user mr-2 icono-user"></i> <input class="form-control m-2 input-user" type="text" name="username" placeholder="Usuario">
-            </div>
-            <div class="row">
-                <i class="fas fa-lock mr-2 icono-password"></i> <input class="form-control m-2 input-password" type="password" name="password" placeholder="Clave">
-            </div>
-            <div class="mt-4 container-fluid back-barra-login barra login-screen">
-                <div class="btns-flex d-flex flex-row justify-content-center">
-                    <div class="input-group d-flex flex-row">
-                        <div class="g-recaptcha mr-3" data-sitekey="API_KEY"></div>
-                        <button type="submit" class="btn text-white btn-light mt-3 mb-3 boton-submit" name="login_user">Ingresar</button>
-                    </div>
+    <div class="container my-auto formulario">
+            <h1 class="text-white titulo-inicio text-center mt-5">Inicio</h1>
+            <form method="POST" action="index.php" class="mt-5 d-flex flex-lg-row formulario-columna">
+                <div class="col-lg">
+                    <input type="text" name="username" class="form-control m-2 w-25 input-user" placeholder="Usuario" required value="<?php echo $username; ?>">
+                    <input type="password" name="password" class="form-control m-2 w-25 input-password" placeholder="Clave" required minlength="8">
+                   <input type="submit" name="reg_user" value="Registrarme" class="btn btn-success m-2 p-2">
                 </div>
-            </div>
-        </form>
-    </div>
+            </form>
+        </div>
 
 
 
     <!-- Funciones JS -->
     <script src="./src/index.js"></script>
-    <!-- CAPTCHA -->
-    <script src='https://www.google.com/recaptcha/api.js'></script>
     <!-- BOOTSTRAP JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
