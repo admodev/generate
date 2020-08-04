@@ -95,6 +95,9 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
             <div id="page-inner">
                 <div class="row">
                     <h3>Mi Red</h3>
+                    <div class="escalones">
+<a href="escalon1.php">Escalon 1</a>
+</div>
                 </div>
                 <!-- /. ROW  -->
                 <hr />
