@@ -216,17 +216,24 @@ if (isset($_POST['login_user'])) {
         array_push($errors, "La clave es requerida");
     }
 
-    if ($status == 0) {
-        die("Aun no activaste tu cuenta, activala para poder loguearte...");
+    $statusQuery = "SELECT status FROM users WHERE username='$username'";
+    $resultStatus = mysqli_query($con, $statusQuery);
+    $statusQueryResults = mysqli_fetch_assoc($resultStatus);
+
+    if ($statusQueryResults) {
+        if ($statusQueryResults['status'] == 0) {
+            array_push($errors, "Debes activar tu cuenta para continuar");
+        }
     }
 
-    if (count($errors) == 0 && $statusResult == 1) {
+
+    if (count($errors) == 0 && $statusQueryResults == 1) {
         $password = md5($password);
-        $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
-        $results = mysqli_query($con, $query);
-        $statusCheckQuery = "SELECT * FROM users WHERE username='$username' AND status=1";
-        $statusResult = mysqli_query($con, $statusCheckQuery);
-        if (mysqli_num_rows($results) == 1 && mysqli_num_rows($statusResult) == 1) {
+        $queryLogin = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $resultsLogin = mysqli_query($con, $queryLogin);
+        $statusCheckQueryLogin = "SELECT * FROM users WHERE username='$username' AND status=1";
+        $statusResultLogin = mysqli_query($con, $statusCheckQueryLogin);
+        if (mysqli_num_rows($resultsLogin) == 1) {
             $_SESSION['username'] = $username;
             $_SESSION['success'] = "Ahora estás logueado!";
             header("Location: ./panel/index.php");
