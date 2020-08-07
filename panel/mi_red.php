@@ -96,9 +96,22 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
             <div id="page-inner">
                 <div class="row">
                     <h3>Mi Red</h3>
-                    <div class="escalones">
-                        <a href="escalon1.php">Escalon 1</a>
-                        <?php print_r($escalones); ?>
+                    <div class="cajas" id="cajas">
+                        <div><span>User1</span></div>
+                        <div><span>User2</span></div>
+                        <div><span>User3</span></div>
+                        <div><span>User4</span></div>
+                        <div><span>User5</span></div>
+                        <div><span>User6</span></div>
+                        <div><span>User7</span></div>
+                        <div><span>User8</span></div>
+                        <div><span>User9</span></div>
+                        <div><span>User10</span></div>
+                        <div><span>User11</span></div>
+                        <div><span>User12</span></div>
+                        <div><span>User13</span></div>
+                        <div><span>User14</span></div>
+                        <div><span>User15</span></div>
                     </div>
                 </div>
                 <!-- /. ROW  -->
@@ -112,15 +125,19 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
     <!-- /. WRAPPER  -->
     <!-- SCRIPTS -AT THE BOTOM TO REDUCE THE LOAD TIME-->
     <!-- JQUERY SCRIPTS -->
-    <script src="assets/js/jquery-1.10.2.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="./backend/wz_jsgraphics.js"></script>
+    <script type="text/javascript" src="./backend/binarytree.js"></script>
     <!-- BOOTSTRAP SCRIPTS -->
     <script src="assets/js/bootstrap.min.js"></script>
     <!-- METISMENU SCRIPTS -->
     <script src="assets/js/jquery.metisMenu.js"></script>
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
-
-
+    <script type="text/javascript">
+        let canv = document.getElementById("cajas");
+        Btree(canv, hSpace: 50, vSpace: 50, borderWidth: 4, branchColor: "#000000", branchStroke: 2, horizontal: false, flip: true);
+    </script>
 </body>
 
 </html>
