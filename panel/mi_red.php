@@ -21,6 +21,7 @@ require_once('./backend/red.php');
     <!-- GOOGLE FONTS-->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css' />
     <link href="assets/css/estilos-index.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./css/red.css">
 </head>
 
 <body>
@@ -96,22 +97,29 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
             <div id="page-inner">
                 <div class="row">
                     <h3>Mi Red</h3>
-                    <div class="cajas" id="cajas">
-                        <div><span>User1</span></div>
-                        <div><span>User2</span></div>
-                        <div><span>User3</span></div>
-                        <div><span>User4</span></div>
-                        <div><span>User5</span></div>
-                        <div><span>User6</span></div>
-                        <div><span>User7</span></div>
-                        <div><span>User8</span></div>
-                        <div><span>User9</span></div>
-                        <div><span>User10</span></div>
-                        <div><span>User11</span></div>
-                        <div><span>User12</span></div>
-                        <div><span>User13</span></div>
-                        <div><span>User14</span></div>
-                        <div><span>User15</span></div>
+                    <div class="tree">
+                        <ul>
+                            <li>
+                                <div><input type="checkbox"> Main <br /> <button> Test Btn </button></div>
+                                <ul>
+                                    <li>
+                                        <div><input type="checkbox"> Sub-1</div>
+                                    </li>
+                                    <li>
+                                        <div><input type="checkbox"> Sub-2</div>
+                                        <ul>
+                                            <li>
+                                                <div><input type="checkbox"> Sub-2-1</div>
+                                            </li>
+                                            <li>
+                                                <div><input type="checkbox"> Sub-2-2</div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                            </li>
+                        </ul>
                     </div>
                 </div>
                 <!-- /. ROW  -->
