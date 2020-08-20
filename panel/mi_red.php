@@ -100,19 +100,19 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
                     <div class="tree">
                         <ul>
                             <li>
-                                <div><input type="checkbox"> Main <br /> <button> Test Btn </button></div>
+                                <div>Usuario 1</div>
                                 <ul>
                                     <li>
-                                        <div><input type="checkbox"> Sub-1</div>
+                                        <div>Usuario 2</div>
                                     </li>
                                     <li>
-                                        <div><input type="checkbox"> Sub-2</div>
+                                        <div>Usuario 3</div>
                                         <ul>
                                             <li>
-                                                <div><input type="checkbox"> Sub-2-1</div>
+                                                <div>Usuario 4</div>
                                             </li>
                                             <li>
-                                                <div><input type="checkbox"> Sub-2-2</div>
+                                                <div>Usuario 5</div>
                                             </li>
                                         </ul>
                                     </li>
