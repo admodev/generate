@@ -29,11 +29,11 @@
     </div>
     <div class="container my-auto formulario">
             <h1 class="text-white titulo-inicio text-center mt-5">Inicio</h1>
-            <form method="POST" action="index.php" class="mt-5 d-flex flex-lg-row formulario-columna">
+            <form method="POST" action="./panel/index.php" class="mt-5 d-flex flex-lg-row formulario-columna">
                 <div class="col-lg">
                     <input type="text" name="username" class="form-control m-2 w-25 input-user" placeholder="Usuario" required value="<?php echo $username; ?>">
                     <input type="password" name="password" class="form-control m-2 w-25 input-password" placeholder="Clave" required minlength="8">
-                   <input type="submit" name="reg_user" value="Registrarme" class="btn btn-success m-2 p-2">
+                   <input type="submit" name="login_user" value="Iniciar" class="btn btn-success m-2 p-2">
                 </div>
             </form>
         </div>

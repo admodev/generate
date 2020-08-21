@@ -20,7 +20,7 @@ $preference = new MercadoPago\Preference();
 $item = new MercadoPago\Item();
 $item->title = 'Suscripcion Club Generate';
 $item->quantity = 1;
-$item->unit_price = 2000.56; //TODO: poner precio real
+$item->unit_price = 7300.46;
 $preference->items = array($item);
 $preference->save();
 
@@ -228,7 +228,9 @@ if (isset($_POST['login_user'])) {
         if ($statusQueryResults['status'] == 0) {
             array_push($errors, "Debes activar tu cuenta para continuar");
         }
-    } elseif (count($errors) == 0) {
+    }
+
+    if (count($errors) == 0) {
         $password = md5($password);
         $queryLogin = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $resultsLogin = mysqli_query($con, $queryLogin);
