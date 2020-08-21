@@ -1,9 +1,3 @@
-<?php
-
-include('email_verification.php');
-
-?>
-
 <html>
 
 <head>
@@ -25,11 +19,19 @@ include('email_verification.php');
 </head>
 
 <body>
+  <?php
+     include('email_verification.php');
+     if (isset($_SESSION['username'])) {
+         header('location: ./panel/index.php');
+     } else {
+         ?>
   <div class="container d-flex flex-column mx-auto m-5 background-register">
     <h3 class="mx-auto text-white">Por favor confirma tu cuenta para continuar...</h3>
     <p class="mx-auto text-white">Si ya activaste tu cuenta <a href="login.php" class="font-weight-bold text-decoration-none text-white">Logueate!</a></p>
   </div>
-
+  <?php
+     }
+  ?>
 
 
   <!-- Funciones JS -->

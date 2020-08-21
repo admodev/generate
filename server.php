@@ -176,7 +176,7 @@ if (isset($_POST['reg_user'])) {
 
     $check_ref_query = mysqli_query($con, $check_ref);
 
-    if (is_null($check_ref_query)) {
+    if (is_null($check_ref_query) || empty($num_socio_ref_input)) {
         array_push($errors, "Numero de referente invalido");
         header('location: lista_referentes.php');
     }
@@ -228,10 +228,7 @@ if (isset($_POST['login_user'])) {
         if ($statusQueryResults['status'] == 0) {
             array_push($errors, "Debes activar tu cuenta para continuar");
         }
-    }
-
-
-    if (count($errors) == 0) {
+    } elseif (count($errors) == 0) {
         $password = md5($password);
         $queryLogin = "SELECT * FROM users WHERE username='$username' AND password='$password'";
         $resultsLogin = mysqli_query($con, $queryLogin);
