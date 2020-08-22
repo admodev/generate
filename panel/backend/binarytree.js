@@ -32,7 +32,7 @@ function Btree(caller, options){
 		horizontal: true,
 		flip: false
 	}, options);
-};
+}
 
 Btree.prototype.displayTree = function(){
 	//display settings

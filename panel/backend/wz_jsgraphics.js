@@ -83,7 +83,7 @@ function _pntDoc()
 
 function _pntN()
 {
-	;
+	
 }
 
 function _mkDiv(x, y, w, h)
@@ -1099,7 +1099,7 @@ function _mkLinVirt(aLin, x1, y1, x2, y2)
 	}
 	for(var len = aLin.length, i = len-i; i;)
 		aLin[len-(i--)] = x;
-};
+}
 
 function _CompInt(x, y)
 {
