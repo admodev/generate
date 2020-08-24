@@ -50,7 +50,7 @@ if (isset($_SESSION['username'])) : ?>
             <a class="nav-link text-white" href="testimonios.php">Testimonios</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Visión y Misión</a>
+            <a class="nav-link text-white" href="visionMision.php">Visión y Misión</a>
           </li>
           <li class="nav-item">
             <a class="nav-link text-white" href="#" id="irBeneficios" data-toggle="modal" data-target="#beneficiosModal">Beneficios</a>
@@ -75,7 +75,7 @@ if (isset($_SESSION['username'])) : ?>
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="#">Comisión Directiva</a>
+            <a class="nav-link text-white" href="comision.php">Comisión Directiva</a>
           </li>
         </ul>
         <a href="register.php" class="nav-link nav-link-registerphp"><i class="fas fa-user-plus">

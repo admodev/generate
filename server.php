@@ -244,3 +244,11 @@ if (isset($_POST['login_user'])) {
         }
     }
 }
+
+// Destruir session despues de 30 minutos:
+if (isset($_SESSION['LAST_ACTIVITY']) && (time() - $_SESSION['LAST_ACTIVITY'] > 1800)) {
+    session_unset();
+    session_destroy();
+}
+
+$_SESSION['LAST_ACTIVITY'] = time(); // actualiza la time stamp de la ultima actividad registrada
