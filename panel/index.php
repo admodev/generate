@@ -37,7 +37,7 @@ include('../server.php');
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a href="<?php echo session_destroy(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
+font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a href="<?php session_destroy(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">

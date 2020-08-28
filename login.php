@@ -27,17 +27,15 @@
     <div class="flecha-derecha">
         <a href="register.php" class="text-white text-decoration-none">Aún no te registraste? <i class="fas fa-arrow-right cuenta-anchor"></i></a>
     </div>
-    <div class="container my-auto formulario">
-            <h1 class="text-white titulo-inicio text-center mt-5">Inicio</h1>
-            <form method="POST" action="./panel/index.php" class="mt-5 d-flex flex-lg-row formulario-columna">
-                <div class="col-lg">
-                    <input type="text" name="username" class="form-control m-2 w-25 input-user" placeholder="Usuario" required value="<?php echo $username; ?>">
-                    <input type="password" name="password" class="form-control m-2 w-25 input-password" placeholder="Clave" required minlength="8">
-                   <input type="submit" name="login_user" value="Iniciar" class="btn btn-success m-2 p-2">
-                </div>
-            </form>
-        </div>
-
+    <div class="formulario d-flex flex-column align-items-center justify-content-around mt-5">
+        <h1 class="text-white titulo-inicio">Inicio</h1>
+        <form method="POST" action="./panel/index.php">
+            <input type="text" name="username_login" class="form-control m-2" placeholder="Usuario" required value="<?php echo $username; ?>">
+            <input type="password" name="password_login" class="form-control m-2" placeholder="Clave" required minlength="8">
+            <input type="submit" name="login_user" value="Iniciar" class="btn btn-primary p-2 m-2" style="background-color: transparent;
+  padding: 2px 7px;
+  border-radius: 15px; border: solid 2px;">
+    </div>
 
 
     <!-- Funciones JS -->

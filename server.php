@@ -204,41 +204,29 @@ if (isset($_POST['reg_user'])) {
         $_SESSION['username'] = $username;
         $_SESSION['success'] = "Ahora estás logueado!";
         header("Location: confirmacion.php");
-        ini_set('session.cookie_lifetime',  10800);
     }
 }
 
 // LOGIN USER
 if (isset($_POST['login_user'])) {
-    $username = mysqli_real_escape_string($con, $_POST['username']);
-    $password = mysqli_real_escape_string($con, $_POST['password']);
+    $username_login = mysqli_real_escape_string($con, $_POST['username_login']);
+    $password_login = mysqli_real_escape_string($con, $_POST['password_login']);
 
-    if (empty($username)) {
+    if (empty($username_login)) {
         array_push($errors, "El usuario es requerido");
     }
-    if (empty($password)) {
+    if (empty($password_login)) {
         array_push($errors, "La clave es requerida");
     }
 
-    $statusQuery = "SELECT status FROM users WHERE username='$username'";
-    $resultStatus = mysqli_query($con, $statusQuery);
-    $statusQueryResults = mysqli_fetch_assoc($resultStatus);
-
-    if ($statusQueryResults) {
-        if ($statusQueryResults['status'] == 0) {
-            array_push($errors, "Debes activar tu cuenta para continuar");
-        }
-    }
-
-    if (count($errors) == 0) {
-        $password = md5($password);
-        $queryLogin = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+    if (!empty($username_login) && (!empty($password_login)) && (count($errors) == 0)) {
+        $passwordHash = md5($password_login);
+        $queryLogin = "SELECT * FROM users WHERE username='$username_login' AND password='$passwordHash'";
         $resultsLogin = mysqli_query($con, $queryLogin);
         if (mysqli_num_rows($resultsLogin) == 1) {
-            $_SESSION['username'] = $username;
+            $_SESSION['username'] = $username_login;
             $_SESSION['success'] = "Ahora estás logueado!";
             header("Location: ./panel/index.php");
-            ini_set('session.cookie_lifetime',  10800);
         } else {
             array_push($errors, "Combinacion de usuario y clave incorrecta");
         }
