@@ -25,21 +25,18 @@
   <div class="container mt-5 p-5">
     <div class="card text-center">
       <div class="card-header">
-        <h4>Metodos de pago</h4>
+        <h4>Elige tu tipo de cuenta</h4>
       </div>
       <div class="card-body">
+<a href="#" onclick="goBack()">Atras</a>
         <ul class="nav card-header d-flex flex-lg-row justify-content-around">
           <li class="nav-item">
-            <h4>Efectivo</h4>
-            <a class="nav-link" href="pagos.php">Pagar</a>
+            <h4>CBU</h4>
+            <a class="nav-link" href="pagosTransferenciasCbu.php">Pagar</a>
           </li>
           <li class="nav-item">
-            <h4>Tarjeta de Credito/Debito</h4>
-            <a class="nav-link" href="pagos.php">Pagar</a>
-          </li>
-          <li class="nav-item">
-            <h4>Transferencia Bancaria</h4>
-            <a class="nav-link" href="pagosTransferencias.php">Pagar</a>
+            <h4>CVU</h4>
+            <a class="nav-link" href="pagosTransferenciasCvu.php">Pagar</a>
           </li>
         </ul>
       </div>
@@ -48,6 +45,11 @@
 
 
 
+<script type="text/javascript">
+function goBack() {
+    window.history.back();
+}
+</script>
   <!-- Funciones JS -->
   <script src="./src/index.js"></script>
   <!-- Script API MERCADOPAGO -->
