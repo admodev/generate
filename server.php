@@ -6,6 +6,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+require('./environment.php');
+
 session_start();
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
@@ -53,7 +55,12 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
 
 // Conectarse a la base de datos
 
-$con = mysqli_connect('localhost', '${{secret.DB_USER}}', '${{secret.DB_PASSWORD}}', 'generate');
+$dbHost = $_ENV["DBHOST"];
+$dbUser = $_ENV["DBUSER"];
+$dbPassword = $_ENV["DBPASSWORD"];
+$dbName = $_ENV["DBNAME"];
+
+$con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
 
 // Registrar usuario
 
