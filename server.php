@@ -53,7 +53,7 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
 
 // Conectarse a la base de datos
 
-$con = mysqli_connect('localhost', 'root', '11_De_Octubre_13', 'generate');
+$con = mysqli_connect('localhost', '${{secret.DB_USER}}', '${{secret.DB_PASSWORD}}', 'generate');
 
 // Registrar usuario
 
