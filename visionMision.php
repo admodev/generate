@@ -19,16 +19,16 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body class="background-vision">
+<body>
     <div class="container"><a href="index.php" class="text-white text-uppercase text-decoration-none float-right ml-5 mt-5">
             <i class="fas fa-arrow-up m-2"></i>
             Inicio
         </a></div>
-    <div class="background-vision mt-3">
+    <div class="background-vision">
         <br> <br> <br> <br>
         <h2 class="mt-5 h2-vision text-white text-uppercase">Visión</h2>
         <br> <br>
-        <p class="ml-5 text-white p-vision">Lorem ipsum dolor sit, amet consectetur adipisicing <br> elit. Numquam omnis id atque consectetur velit fugiat maxime quos sequi sapiente accusamus laudantium quam, nesciunt, aliquam quae tenetur <br> expedita commodi odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptate ullam? Voluptatum qui, eius dolorem <br> quibusdam explicabo molestiae temporibus aliquam itaque culpa adipisci est perferendis porro, laboriosam distinctio!</p>
+        <p class="ml-5 text-white p-vision text-justify text-break w-75">En GENERATE creemos en la realización de los sueños y en que todos merecemos la mejor calidad de vida posible, es así que tomamos la iniciativa de ayudar a un país, una región y luego al mundo, desarrollando la producción y el crecimiento, cuidando el medio ambiente, para la prosperidad de todos, donde todas las personas puedan ser parte de un club que potencia tu productividad, desarrolla emprendimientos, cambia la realidad de nuestros socios, y te contiene hacia el futuro, donde cada uno de los socios de genérate pueda vivir cumpliendo sus metas financieras y desarrollar una vida en abundancia. Vemos una comunidad capaz de ayudar, ocupándonos del bien estar común, desarrollando y expresando nuestras habilidades y deseos, personales e individuales, GENERATE es un juego individual jugado en equipo, creemos que cambiar el mundo es posible.</p>
         <br> <br>
     </div>
 
@@ -36,8 +36,33 @@
         <br> <br> <br> <br>
         <h2 class="mt-5 text-white h2-mision text-uppercase">Misión</h2>
         <br> <br>
-        <p class="text-white p-mision">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam omnis id atque <br> consectetur velit fugiat maxime quos sequi sapiente accusamus laudantium quam, <br> nesciunt, aliquam quae tenetur expedita commodi odit. Lorem ipsum dolor sit amet <br> consectetur adipisicing elit. Amet reprehenderit voluptate ullam? Voluptatum qui, eius <br> dolorem quibusdam explicabo molestiae temporibus aliquam itaque culpa adipisci est <br> perferendis porro, laboriosam distinctio!</p>
+        <p class="text-white p-mision text-justify text-break w-75">Desarrollamos una plataforma para personas que deseen ganar dinero en el mundo, hacemos que el dinero fluya como medio para conseguir riqueza, ponemos en marcha todas las ideas productivas, rescatamos tu empresa, ayudamos a que salgas de tú deuda, te ayudamos a crecer, fomentamos la educación financiera, damos soporte a cada inquietud administrativa económica, creamos una red de consumidores, nos generamos la posibilidad de invertir asegurándonos un futuro financiero en paz, nos ayudamos entre los socios ante eventualidades en la salud, GENERATE está disponible para que crear nuestro futuro, y así conseguir la vida que soñamos.</p>
         <br> <br>
+    </div>
+
+    <div class="valores">
+        <div class="d-flex flex-column ml-5 mr-5">
+            <h2 class="m-5 text-uppercase font-weight-bold">Valores</h2>
+            <h3 class="m-5 text-uppercase font-weight-bold">Nuestros Valores:</h3>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Vida</h4>
+            <p>Es el valor más importante y creemos que es única e irrepetible, por lo tanto, debe ser extraordinaria, potenciamos al ser humano hacia su máxima expresión, para poder hacer de tus ideas y sueños una realidad tangible e inspiradora.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Honestidad</h4>
+            <p>Para que puedas confiar, en que cada decisión del club será transparente y enfocada a la visión declarada, honestidad de que tu esfuerzo será cuidado, valorado y recompensado.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Trabajo</h4>
+            <p>Desarrollar la tarea de tus sueños y poder vivir en abundancia de tu pasión, feliz y completo.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Comunidad</h4>
+            <p>El bien de la comunidad esta alineado y coordinado con el bien individual, es así que el poder esta dado por la unión del equipo, el cual crece desde tus capacidades individuales.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Compromiso</h4>
+            <p>De que todos llegaremos a cumplir nuestras metas, ese es el espíritu de equipo que nos llevara a cumplir nuestros sueños, a tener una vida que valga y deje huella, que inspire a los demás a seguir cumpliendo sueños.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Responsabilidad</h4>
+            <p>Somos los creadores de nuestro futuro con las dediciones que tomamos en nuestro presente, y es ahora cuando comienza nuestro viaje hacia la abundancia, las decisiones que tomes hoy son las semillas del fruto que levantaras en tu futuro.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Pasión</h4>
+            <p>Es la llave para triunfar, por eso ponemos nuestra pasión al servicio del club, y potenciamos tu pasión para que hagas eso que amas, y a partir de tu pasión logres una vida abundante y libre.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Riesgo</h4>
+            <p>Te acompañamos corriendo el riesgo de seguir tus sueños con tu mente, corazón y espíritu, a tu lado codo a codo para ganar juntos, dándote soporte desde nuestro corazón, mente, cuerpo y espíritu, poniendo a tu disposición todo nuestro saber y experiencia.</p>
+            <h4 class="mt-2 text-uppercase font-weight-bold">Libertad</h4>
+            <p>El valor más hermoso con el que podés contar, respetamos tus sueños y tus elecciones sin juzgarlos y te impulsamos a sueñes cada vez más grande, a desplegar las alas para volar bien alto.</p>
+        </div>
     </div>
 
 

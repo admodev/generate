@@ -153,7 +153,7 @@ if (isset($_SESSION['username'])) : ?>
     <br> <br> <br> <br>
     <h2 class="mt-5 h2-vision text-white text-uppercase">Visión</h2>
     <br> <br>
-    <p class="ml-5 text-white p-vision">Lorem ipsum dolor sit, amet consectetur adipisicing <br> elit. Numquam omnis id atque consectetur velit fugiat maxime quos sequi sapiente accusamus laudantium quam, nesciunt, aliquam quae tenetur <br> expedita commodi odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet reprehenderit voluptate ullam? Voluptatum qui, eius dolorem <br> quibusdam explicabo molestiae temporibus aliquam itaque culpa adipisci est perferendis porro, laboriosam distinctio!</p>
+    <p class="ml-5 text-white p-vision text-justify text-break w-75">En GENERATE creemos en la realización de los sueños y en que todos merecemos la mejor calidad de vida posible, es así que tomamos la iniciativa de ayudar a un país, una región y luego al mundo, desarrollando la producción y el crecimiento, cuidando el medio ambiente, para la prosperidad de todos, donde todas las personas puedan ser parte de un club que potencia tu productividad, desarrolla emprendimientos, cambia la realidad de nuestros socios, y te contiene hacia el futuro, donde cada uno de los socios de genérate pueda vivir cumpliendo sus metas financieras y desarrollar una vida en abundancia. Vemos una comunidad capaz de ayudar, ocupándonos del bien estar común, desarrollando y expresando nuestras habilidades y deseos, personales e individuales, GENERATE es un juego individual jugado en equipo, creemos que cambiar el mundo es posible.</p>
     <br> <br>
   </div>
 
@@ -161,7 +161,7 @@ if (isset($_SESSION['username'])) : ?>
     <br> <br> <br> <br>
     <h2 class="mt-5 text-white h2-mision text-uppercase">Misión</h2>
     <br> <br>
-    <p class="text-white p-mision">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Numquam omnis id atque <br> consectetur velit fugiat maxime quos sequi sapiente accusamus laudantium quam, <br> nesciunt, aliquam quae tenetur expedita commodi odit. Lorem ipsum dolor sit amet <br> consectetur adipisicing elit. Amet reprehenderit voluptate ullam? Voluptatum qui, eius <br> dolorem quibusdam explicabo molestiae temporibus aliquam itaque culpa adipisci est <br> perferendis porro, laboriosam distinctio!</p>
+    <p class="text-white p-mision text-justify text-break w-75">Desarrollamos una plataforma para personas que deseen ganar dinero en el mundo, hacemos que el dinero fluya como medio para conseguir riqueza, ponemos en marcha todas las ideas productivas, rescatamos tu empresa, ayudamos a que salgas de tú deuda, te ayudamos a crecer, fomentamos la educación financiera, damos soporte a cada inquietud administrativa económica, creamos una red de consumidores, nos generamos la posibilidad de invertir asegurándonos un futuro financiero en paz, nos ayudamos entre los socios ante eventualidades en la salud, GENERATE está disponible para que crear nuestro futuro, y así conseguir la vida que soñamos.</p>
     <br> <br>
   </div>
   <div class="container">
