@@ -215,29 +215,32 @@ if (isset($_POST['reg_user'])) {
 }
 
 // LOGIN USER
+
 if (isset($_POST['login_user'])) {
     $username_login = mysqli_real_escape_string($con, $_POST['username_login']);
     $password_login = mysqli_real_escape_string($con, $_POST['password_login']);
 
     if (empty($username_login)) {
-        array_push($errors, "El usuario es requerido");
-    }
-    if (empty($password_login)) {
-        array_push($errors, "La clave es requerida");
-    }
+        array_push($errors, "Ingresa tu usuario.");
+}
 
-    if (!empty($username_login) && (!empty($password_login)) && (count($errors) == 0)) {
-        $passwordHash = md5($password_login);
+    if (empty($password_login)) {
+        array_push($errors, "Ingresa tu clave.");
+}
+
+    if (count($errors) == 0) {
+        $password = md5($password_login);
         $queryLogin = "SELECT * FROM users WHERE username='$username_login' AND password='$passwordHash'";
         $resultsLogin = mysqli_query($con, $queryLogin);
         if (mysqli_num_rows($resultsLogin) == 1) {
             $_SESSION['username'] = $username_login;
             $_SESSION['success'] = "Ahora estás logueado!";
             header("Location: ./panel/index.php");
-        } else {
+       } else {
             array_push($errors, "Combinacion de usuario y clave incorrecta");
         }
     }
+
 }
 
 // Destruir session despues de 30 minutos:
