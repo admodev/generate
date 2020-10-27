@@ -6,11 +6,14 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-require('./environment.php');
-
 session_start();
 // SDK de Mercado Pago
 require __DIR__ .  '/vendor/autoload.php';
+
+// Cargar variables de entorno globales
+
+$dotenv = Dotenv\Dotenv::createImmutable('./');
+$dotenv->load();
 
 //// Credenciales
 MercadoPago\SDK::setAccessToken('PROD_ACCESS_TOKEN'); //TODO: generar y enlazar token de acceso
@@ -55,10 +58,10 @@ $countries = array("Afghanistan", "Albania", "Algeria", "American Samoa", "Andor
 
 // Conectarse a la base de datos
 
-$dbHost = $_ENV["DBHOST"];
-$dbUser = $_ENV["DBUSER"];
-$dbPassword = $_ENV["DBPASSWORD"];
-$dbName = $_ENV["DBNAME"];
+$dbUser = $_ENV['DB_USER'];
+$dbPassword = $_ENV['DB_PASS'];
+$dbHost = $_ENV['DB_HOST'];
+$dbName = $_ENV['DB_NAME'];
 
 $con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
 
