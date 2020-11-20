@@ -1,4 +1,53 @@
-<?php require('server.php'); ?>
+<?php 
+session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ . '/vendor/autoload.php';
+
+// Cargar variables de entorno globales
+
+$dotenv = Dotenv\Dotenv::createImmutable('./');
+$dotenv->load();
+
+$dbUser = $_ENV['DB_USER'];
+$dbPassword = $_ENV['DB_PASS'];
+$dbHost = $_ENV['DB_HOST'];
+$dbName = $_ENV['DB_NAME'];
+
+$con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+
+$username = "";
+$errors = array();
+
+if (isset($_POST['login_user'])) {
+    $username = mysqli_real_escape_string($con, $_POST['username']);
+    $password = mysqli_real_escape_string($con, $_POST['password']);
+
+    if (empty($username)) {
+        array_push($errors, "Username is required");
+    }
+    if (empty($password)) {
+        array_push($errors, "Password is required");
+    }
+
+    if (count($errors) == 0) {
+        $password = md5($password);
+        $query = "SELECT * FROM users WHERE username='$username' AND password='$password'";
+        $results = mysqli_query($con, $query);
+        if (mysqli_num_rows($results) == 1) {
+            $_SESSION['username'] = $username;
+            $_SESSION['success'] = "You are now logged in";
+            header('location: panel/index.php');
+        }else {
+            array_push($errors, "Wrong username/password combination");
+        }
+    }
+}
+
+?>
 <!DOCTYPE html>
 <html>
 
@@ -29,9 +78,10 @@
     </div>
     <div class="formulario d-flex flex-column align-items-center justify-content-around mt-5">
         <h1 class="text-white titulo-inicio">Inicio</h1>
-        <form method="POST" action="./panel/index.php">
-            <input type="text" name="username_login" class="form-control m-2" placeholder="Usuario" required value="<?php echo $username; ?>">
-            <input type="password" name="password_login" class="form-control m-2" placeholder="Clave" required minlength="8">
+        <p><?php var_dump($_SESSION['username']); ?></p>
+        <form method="POST">
+            <input type="text" name="username" class="form-control m-2" placeholder="Usuario" required>
+            <input type="password" name="password" class="form-control m-2" placeholder="Clave" required minlength="8">
             <input type="submit" name="login_user" value="Iniciar" class="btn btn-primary p-2 m-2" style="background-color: transparent;
   padding: 2px 7px;
   border-radius: 15px; border: solid 2px;">

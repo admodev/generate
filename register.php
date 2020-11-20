@@ -1,5 +1,4 @@
 <?php
-
 include('server.php');
 
 ini_set('display_errors', 1);
@@ -38,12 +37,12 @@ error_reporting(E_ALL);
             </div>
             <div class="container my-auto formulario">
                   <h1 class="text-white titulo-registro text-center mt-5">Registro</h1>
-                  <form method="POST" action="opciones_pago.php" class="mt-5 d-flex flex-lg-row formulario-columna">
+                  <form method="POST" class="mt-5 d-flex flex-lg-row formulario-columna">
                         <div class="col-lg">
                               <input type="text" name="username" class="form-control m-2 w-75" placeholder="Usuario" required value="<?php echo $username; ?>">
                               <input type="email" name="email" class="form-control m-2" placeholder="Correo Electrónico" required value="<?php echo $email; ?>">
-                              <input type="password" name="password_uno" class="form-control m-2" placeholder="Clave" required minlength="8">
-                              <input type="password" name="password_dos" class="form-control m-2" placeholder="Repetir Clave" required minlength="8">
+                              <input type="password" name="password_1" class="form-control m-2" placeholder="Clave" required minlength="8">
+                              <input type="password" name="password_2" class="form-control m-2" placeholder="Repetir Clave" required minlength="8">
                               <input type="text" name="sponsor" class="form-control m-2" placeholder="Sponsor" required value="<?php echo $sponsor; ?>">
                               <input type="text" name="nombre" class="form-control m-2 w-75" placeholder="Nombre" required value="<?php echo $nombre; ?>">
                               <input type="text" name="apellido" class="form-control m-2 w-75" placeholder="Apellido" required value="<?php echo $apellido; ?>">

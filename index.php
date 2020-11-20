@@ -1,4 +1,5 @@
 <?php
+include('server.php');
 
 if (isset($_SESSION['username'])) : ?>
   <div class="alert alert-success alert-dismissible fade show" role="alert">
