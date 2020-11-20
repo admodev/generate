@@ -78,7 +78,6 @@ if (isset($_POST['login_user'])) {
     </div>
     <div class="formulario d-flex flex-column align-items-center justify-content-around mt-5">
         <h1 class="text-white titulo-inicio">Inicio</h1>
-        <p><?php var_dump($_SESSION['username']); ?></p>
         <form method="POST">
             <input type="text" name="username" class="form-control m-2" placeholder="Usuario" required>
             <input type="password" name="password" class="form-control m-2" placeholder="Clave" required minlength="8">

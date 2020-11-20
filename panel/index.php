@@ -16,6 +16,12 @@ $con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
 
 $_SESSION['username'] == null ? header('Location: ../login.php') : $_SESSION['welcome_message'] = "Bienvenido/a de nuevo!";
 
+if(isset($_POST['logout'])) {
+    unset($_SESSION['username']);
+    session_destroy();
+    header('location: logout.php');
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -51,7 +57,11 @@ $_SESSION['username'] == null ? header('Location: ../login.php') : $_SESSION['we
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a href="<?php session_destroy(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
+font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> 
+    <form method="post">
+    <input type="hidden" name="logout" value="true" />
+    <button class="btn btn-danger square-btn-adjust">Cerrar Sesión</button>
+    </form> 
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
