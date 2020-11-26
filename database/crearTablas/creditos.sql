@@ -27,13 +27,19 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `creditos`
 --
+USE generate;
 
 CREATE TABLE `creditos` (
-  `id` int(11) NOT NULL,
-  `composicion` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `saldo` int(255) NOT NULL,
-  `activos` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `cancelados` varchar(300) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL
+    `id` int(255) NOT NULL,
+    `user_id` INT(255) NOT NULL,
+    `composicion` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `saldo` int(255) NOT NULL,
+    `activos` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `cancelados` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+    `created_at` datetime DEFAULT NULL,
+    `updated_at` datetime DEFAULT NULL,
+    CONSTRAINT pk_pagos PRIMARY KEY(id),
+    CONSTRAINT fk_creditos_user FOREIGN KEY(user_id) REFERENCES users(id)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
@@ -44,7 +50,7 @@ CREATE TABLE `creditos` (
 -- Indexes for table `creditos`
 --
 ALTER TABLE `creditos`
-  ADD PRIMARY KEY (`id`);
+ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -54,7 +60,7 @@ ALTER TABLE `creditos`
 -- AUTO_INCREMENT for table `creditos`
 --
 ALTER TABLE `creditos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
