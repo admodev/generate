@@ -88,10 +88,11 @@ if (isset($_SESSION['username'])) : ?>
       <div class="container container-club-sueños">
         <h1 class="h1-club-sueños">"El Club De Tus Sueños"</h1>
         <p class="p-club-sueños">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti fuga tempore accusamus cum ex ipsum atque et sit sint culpa, aperiam eligendi beatae perspiciatis perferendis deleniti recusandae sunt ipsa amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex sapiente dolores? Corrupti excepturi animi facilis. Velit rem odio cum quo similique cumque tempore mollitia porro facere alias. In, at.
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti fuga tempore accusamus cum ex ipsum atque et sit sint culpa, aperiam eligendi beatae perspiciatis perferendis deleniti recusandae sunt ipsa amet. Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere ex sapiente dolores? Corrupti excepturi animi facilis. Velit rem odio cum quo similique cumque tempore mollitia porro facere alias. In, at.
-          <br><br>
-          <a href="#" class="info text-decoration-none text-white row float-right mb-3 mr-2">+ INFO</a>
+          EL CLUB GENERATE, ES UNA FINTECH BAJO LA FIGURA Y ESPIRITU DE UNA ASOSIACION CIVIL SIN FINES DE LUCRO, QUE TE PERMITE REALIZAR TUS PROYECTOS PRODUCTIVOS, SER DUEÑO DE TU TRABAJO, CONVERTIRTE EN EMPRESARIO DE TUS IDEAS, SER INVERSOR Y PENSAR EN TU FUTURO FINANCIERO COMO ACCIONISTA DE PROYECTOS DENTRO DE LA ECONOMIA REAL, MEDIANTE CREDITOS PARA DESARROLLOS NUEVOS Y EMPRESAS QUE NECESITEN APALCANRSE, AYUDA A EMPRENDEDORES Y EMPRESARIOS, PROPORCIONA MICRO CREDITO PERSONALES.
+
+          CUALES SON LOS BENEFICIOS DE PERTENCER AL CLUB?
+          COMO CUALQUIER CLUB, ESTE COBRARA UNA CUOTA POR SER SOCIO, DICHA CUOTA SERA ANUAL, Y SE PODRA PAGAR EN 1 PAGO O VARIOS CON TARJETA DE CREDITO, ESTA CUOTA SERA ADMNISTRADA POR EL CLUB PARA REALIZAR LOS DIFERENTES CREDITOS, LOS CUALES SERAN VOTADOS POR LOS SOCIOS ACTIVOS...
+          <a href="mas_info_club.php" class="info text-decoration-none text-white row float-right mb-3 mr-2">+ INFO</a>
         </p>
       </div>
     </div>
