@@ -1,6 +1,29 @@
 ﻿<?php
 
-include('../server.php');
+session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ .  '../../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable('../');
+$dotenv->load();
+$dbUser = $_ENV['DB_USER'];
+$dbPassword = $_ENV['DB_PASS'];
+$dbHost = $_ENV['DB_HOST'];
+$dbName = $_ENV['DB_NAME'];
+$con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+
+$username = $_SESSION['username'];
+
+$_SESSION['username'] == null ? header('Location: ../login.php') : $_SESSION['welcome_message'] = "Bienvenido/a de nuevo!";
+
+if (isset($_POST['logout'])) {
+    unset($_SESSION['username']);
+    session_destroy();
+    header('location: logout.php');
+}
 
 $queryProyectos = "SELECT id, proyecto FROM proyectos WHERE id >= 1 AND username='$username'";
 $resultProyectos = mysqli_query($con, $queryProyectos);
@@ -40,7 +63,12 @@ $resultProyectos = mysqli_query($con, $queryProyectos);
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a href="<?php echo session_destroy(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
+font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?>
+                <form method="post">
+                    <input type="hidden" name="logout" value="true" />
+                    <button class="btn btn-danger square-btn-adjust">Cerrar Sesión</button>
+                </form>
+            </div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -101,19 +129,23 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
                     <div class="inversiones">
                         <div class="proyectos">
                             <?php
-                            echo "<table border='2' style='margin: 25px;'>
+                            if (!$row) :
+                                echo "<h3>Aún no tienes inversiones.</h3>";
+                            else :
+                                echo "<table border='2' style='margin: 25px;'>
                             <tr>
                             <th>id</th>
                             <th>proyecto</th>
                             </tr>";
 
-                            while ($row = mysqli_fetch_array($resultProyectos)) {
-                                echo "<tr>";
-                                echo "<td>" . $row['id'] . "</td>";
-                                echo "<td>" . $row['proyecto'] . "</td>";
-                                echo "</tr>";
-                            }
-                            echo "</table>";
+                                while ($row = mysqli_fetch_array($resultProyectos)) {
+                                    echo "<tr>";
+                                    echo "<td>" . $row['id'] . "</td>";
+                                    echo "<td>" . $row['proyecto'] . "</td>";
+                                    echo "</tr>";
+                                }
+                                echo "</table>";
+                            endif;
                             ?>
                         </div>
                     </div>

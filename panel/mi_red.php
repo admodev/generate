@@ -1,7 +1,236 @@
 ﻿<?php
 
-# include('../server.php');
-# require_once('./backend/red.php');
+session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ .  '../../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable('../');
+$dotenv->load();
+$dbUser = $_ENV['DB_USER'];
+$dbPassword = $_ENV['DB_PASS'];
+$dbHost = $_ENV['DB_HOST'];
+$dbName = $_ENV['DB_NAME'];
+$con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+
+$_SESSION['username'] == null ? header('Location: ../login.php') : $_SESSION['welcome_message'] = "Bienvenido/a de nuevo!";
+
+if (isset($_POST['logout'])) {
+    unset($_SESSION['username']);
+    session_destroy();
+    header('location: logout.php');
+}
+
+// Árbol binario balanceado
+
+// class Node
+// {
+//     public $data;
+//     public $leftChild;
+//     public $rightChild;
+
+//     public function __construct($data)
+//     {
+//         $this->data = $data;
+//         $this->leftChild = null;
+//         $this->rightChild = null;
+//     }
+//     public function disp_data()
+//     {
+//         echo $this->data;
+//     }
+// } //end class Node
+// class BinaryTree
+// {
+//     public $root;
+//     //public $s;
+//     public function __construct()
+//     {
+//         $this->root = null;
+//         //$this->s=file_get_contents('store');
+
+//     }
+//     //function to display the tree
+//     public function display()
+//     {
+//         $this->display_tree($this->root);
+//     }
+//     public function display_tree($local_root)
+//     {
+
+//         if ($local_root == null)
+//             return;
+//         $this->display_tree($local_root->leftChild);
+//         echo $local_root->data . "<br/>";
+//         $this->display_tree($local_root->rightChild);
+//     }
+//     // function to insert a new node
+//     public function insert($key)
+//     {
+//         $newnode = new Node($key);
+//         if ($this->root == null) {
+//             $this->root = $newnode;
+//             return;
+//         } else {
+//             $parent = $this->root;
+//             $current = $this->root;
+//             while (true) {
+//                 $parent = $current;
+//                 //$this->find_order($key,$current->data);
+//                 if ($key == ($this->find_order($key, $this->$current->data))) {
+//                     $current = $this->$current->leftChild;
+//                     if ($current == null) {
+//                         $this->$parent->leftChild = $newnode;
+//                         return;
+//                     } //end if2
+//                 } //end if1 
+//                 else {
+//                     $current = $this->$current->rightChild;
+//                     if ($current == null) {
+//                         $this->$parent->rightChild = $newnode;
+//                         return;
+//                     } //end if1                       
+//                 } //end else
+//             } //end while loop 
+//         } //end else
+
+//     } //end insert function
+
+//     //function to search a particular Node
+//     public function find($key)
+//     {
+//         $current = $this->root;
+//         while ($this->$current->data != $key) {
+//             if ($key == $this->find_order($key, $this->$current->data)) {
+//                 $current = $this->$current->leftChild;
+//             } else {
+//                 $current = $this->$current->rightChild;
+//             }
+//             if ($current == null)
+//                 return (null);
+//         }
+//         return ($current->data);
+//     } // end the function to search
+//     public function delete1($key)
+//     {
+//         $current = $this->root;
+//         $parent = $this->root;
+
+//         $isLeftChild = true;
+//         while ($this->$current->data != $key) {
+//             $parent = $current;
+//             if ($key == ($this->find_order($key, $this->$current->data))) {
+//                 $current = $this->$current->leftChild;
+//                 $isLeftChild = true;
+//             } else {
+//                 $current = $this->$current->rightChild;
+//                 $isLeftChild = false;
+//             }
+//             if ($current == null)
+//                 return (null);
+//         } //end while loop 
+
+//         echo "<br/><br/>Node to delete:" . $current->data;
+//         //to delete a leaf node 
+//         if ($current->leftChild == null && $current->rightChild == null) {
+//             if ($current == $this->root)
+//                 $this->root = null;
+//             else if ($isLeftChild == true) {
+//                 $this->$parent->leftChild = null;
+//             } else {
+//                 $this->$parent->rightChild = null;
+//             }
+//             return ($current);
+//         } //end if1
+//         //to delete a node having a leftChild 
+//         else if ($current->rightChild == null) {
+//             if ($current == $this->root)
+//                 $this->root = $current->leftChild;
+//             else if ($isLeftChild == true) {
+//                 $this->$parent->leftChild = $current->leftChild;
+//             } else {
+//                 $this->$parent->rightChild = $current->leftChild;
+//             }
+//             return ($current);
+//         } //end else if1
+//         //to delete a node having a rightChild
+//         else if ($current->leftChild == null) {
+//             if ($current == $this->root)
+//                 $this->root = $current->rightChild;
+//             else if ($isLeftChild == true) {
+//                 $this->$parent->leftChild = $current->rightChild;
+//             } else {
+//                 $this->$parent->rightChild = $current->rightChild;
+//             }
+//             return ($current);
+//         }
+//         //to delete a node having both childs
+//         else {
+//             $successor = $this->get_successor($current);
+//             if ($current == $this->root) {
+//                 $this->root = $successor;
+//             } else if ($isLeftChild == true) {
+//                 $this->$parent->leftChild = $successor;
+//             } else {
+//                 $this->$parent->rightChild = $successor;
+//             }
+//             $successor->leftChild = $current->leftChild;
+//             return ($current);
+//         }
+//     } //end the function to delete a node
+//     //Function to find the successor node
+//     public function get_successor($delNode)
+//     {
+//         $succParent = $delNode;
+//         $successor = $delNode;
+//         $temp = $delNode->rightChild;
+//         while ($temp != null) {
+//             $succParent = $successor;
+//             $successor = $temp;
+//             $temp = $temp->leftChild;
+//         }
+//         if ($successor != $delNode->rightChild) {
+//             $succParent->leftChild = $successor->rightChild;
+//             $successor->rightChild = $delNode->rightChild;
+//         }
+//         return ($successor);
+//     }
+//     //function to find the order of two strings
+//     public function find_order($str1, $str2)
+//     {
+//         $str1 = strtolower($str1);
+//         $str2 = strtolower($str2);
+//         $i = 0;
+//         $j = 0;
+
+//         $p1 = $str1[$i];
+//         $p2 = $str2[$j];
+//         while (true) {
+//             if (ord($p1) < ord($p2) || ($p1 == '' && $p2 == '')) {
+
+//                 return ($str1);
+//             } else {
+//                 if (ord($p1) == ord($p2)) {
+//                     $p1 = $str1[++$i];
+//                     $p2 = $str2[++$j];
+//                     continue;
+//                 }
+//                 return ($str2);
+//             }
+//         } //end while
+
+//     } //end function find string order
+
+//     public function is_empty()
+//     {
+//         if ($this->root == null)
+//             return (true);
+//         else
+//             return (false);
+//     }
+// } //end class BinaryTree
 
 ?>
 
@@ -39,7 +268,7 @@
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a href="<?php echo session_destroy(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
+font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a href="#" class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -143,53 +372,7 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
     <!-- CUSTOM SCRIPTS -->
     <script src="assets/js/custom.js"></script>
     <script type="text/javascript">
-        var tree;
 
-        function setup() {
-            // noCanvas();
-            tree = new Tree();
-            tree.addValue(5);
-            tree.addValue(3);
-            tree.addValue(7);
-            console.log(tree);
-        }
-
-        function Tree() {
-            this.root = null;
-        }
-
-        Tree.prototype.addValue = function(val) {
-            var n = new Node(val);
-            if (this.root == null) {
-                this.root = n;
-            } else {
-                this.root.addNode(n);
-            }
-
-            Node.prototype.addNode = function(n) {
-                if (n.value < this.value) {
-                    if (this.left == null) {
-                        this.left = n;
-                    } else {
-                        this.left.addNode(n);
-                    }
-                } else if (n.value > this.value) {
-                    if (this.right == null) {
-                        this.right = n;
-                    } else {
-                        this.right.addNode(n);
-                    }
-                }
-            }
-        }
-
-        function Node(val) {
-            this.value = val;
-            this.left = null;
-            this.right = null;
-        }
-
-        setup();
     </script>
 </body>
 
