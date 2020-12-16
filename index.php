@@ -102,7 +102,7 @@ if (isset($_SESSION['username'])) : ?>
     <div class="container">
       <h2 class="mt-5 text-uppercase text-white"><br> Beneficios</h2>
       <div class="d-flex flex-lg-row align-items-center mt-5 beneficios-columna">
-        <div class="col border m-2 back-beneficios-uno">
+        <div class="col border mr-2 back-beneficios-uno">
           <img src="./img/uno-beneficios.png" alt="uno" class="img-benef-uno">
           <h4 class="mt-5 text-center text-white text-uppercase">Descuentos</h4>
           <p class="mt-4 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quae optio ratione dolore minus a, non maiores iure accusamus corrupti nisi aut odio cum, sed veritatis nam quaerat ut alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quasi doloremque officia dicta atque accusantium nihil porro qui labore dolorum modi officiis delectus corporis in, ad iste soluta eos vitae!
@@ -110,7 +110,7 @@ if (isset($_SESSION['username'])) : ?>
             <a href="#" class="mb-4 mt-4 mr-3 text-decoration-none text-white float-right">+ INFO</a>
           </p>
         </div>
-        <div class="col border m-2 back-beneficios-dos">
+        <div class="col border back-beneficios-dos">
           <img src="./img/dos-beneficios.png" alt="uno" class="img-benef-dos">
           <h4 class="mt-5 text-center text-white text-uppercase">Prestamos</h4>
           <p class="mt-4 text-white">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quibusdam quae optio ratione dolore minus a, non maiores iure accusamus corrupti nisi aut odio cum, sed veritatis nam quaerat ut alias. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur quasi doloremque officia dicta atque accusantium nihil porro qui labore dolorum modi officiis delectus corporis in, ad iste soluta eos vitae!
@@ -303,8 +303,8 @@ if (isset($_SESSION['username'])) : ?>
   <script src="./src/index.js"></script>
   <!-- BOOTSTRAP JS -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" integrity="sha384-w1Q4orYjBQndcko6MimVbzY0tgp4pWB4lZ7lr30WKz0vr/aWKhXdBNmNb5D92v7s" crossorigin="anonymous"></script>
 </body>
 
 </html>
