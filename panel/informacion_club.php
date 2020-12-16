@@ -56,7 +56,7 @@ if (isset($_POST['logout'])) {
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;">
+font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?>
                 <form method="post">
                     <input type="hidden" name="logout" value="true" />
                     <button class="btn btn-danger square-btn-adjust">Cerrar Sesión</button>
@@ -95,7 +95,7 @@ font-size: 16px;">
                             </svg> Oportunidades De Negocio</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Mi Red</a>
+                        <a href="mi_red.php"><i class="fa fa-sitemap fa-3x"></i> Mi Red</a>
                     </li>
                     <li>
                         <a href="mi_billetera.php"> <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-wallet" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

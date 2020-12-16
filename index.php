@@ -84,7 +84,7 @@ if (isset($_SESSION['username'])) : ?>
       </div>
     </nav> <!-- /NAVBAR -->
     <div class="container d-flex flex-lg-row reproductor-texto">
-      <video src="./video/video-demo.mp4" controls class="video-intro mt-5 ml-2" autoplay loop></video>
+      <video src="./video/video-demo.mp4" controls class="video-intro mt-5 ml-2" autoplay loop muted></video>
       <div class="container container-club-sueños">
         <h1 class="h1-club-sueños">"El Club De Tus Sueños"</h1>
         <p class="p-club-sueños">
