@@ -1,6 +1,27 @@
 ﻿<?php
 
-include('../server.php');
+session_start();
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+require __DIR__ .  '../../vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable('../');
+$dotenv->load();
+$dbUser = $_ENV['DB_USER'];
+$dbPassword = $_ENV['DB_PASS'];
+$dbHost = $_ENV['DB_HOST'];
+$dbName = $_ENV['DB_NAME'];
+$con = mysqli_connect($dbHost, $dbUser, $dbPassword, $dbName);
+
+$_SESSION['username'] == null ? header('Location: ../login.php') : $_SESSION['welcome_message'] = "Bienvenido/a de nuevo!";
+
+if (isset($_POST['logout'])) {
+    unset($_SESSION['username']);
+    session_destroy();
+    header('location: logout.php');
+}
 
 ?>
 
@@ -37,7 +58,12 @@ include('../server.php');
             <div style="color: white;
 padding: 15px 50px 5px 50px;
 float: right;
-font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a href="<?php echo session_destroy(); ?>" class="btn btn-danger square-btn-adjust">Cerrar Sesion</a> </div>
+font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?>
+                <form method="post">
+                    <input type="hidden" name="logout" value="true" />
+                    <button class="btn btn-danger square-btn-adjust">Cerrar Sesión</button>
+                </form>
+            </div>
         </nav>
         <!-- /. NAV TOP  -->
         <nav class="navbar-default navbar-side" role="navigation">
@@ -71,7 +97,7 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
                             </svg> Oportunidades De Negocio</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Mi Red</a>
+                        <a href="mi_red.php"><i class="fa fa-sitemap fa-3x"></i> Mi Red</a>
                     </li>
                     <li>
                         <a href="mi_billetera.php"> <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-wallet" fill="currentColor" xmlns="http://www.w3.org/2000/svg">

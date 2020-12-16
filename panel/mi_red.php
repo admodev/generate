@@ -23,214 +23,19 @@ if (isset($_POST['logout'])) {
     header('location: logout.php');
 }
 
-// Árbol binario balanceado
+$users_query = "SELECT * FROM users";
+$users_result = mysqli_query($con, $users_query);
+$user_fetch = mysqli_fetch_assoc($users_result);
 
-// class Node
-// {
-//     public $data;
-//     public $leftChild;
-//     public $rightChild;
+$users = array($user_fetch);
 
-//     public function __construct($data)
-//     {
-//         $this->data = $data;
-//         $this->leftChild = null;
-//         $this->rightChild = null;
-//     }
-//     public function disp_data()
-//     {
-//         echo $this->data;
-//     }
-// } //end class Node
-// class BinaryTree
-// {
-//     public $root;
-//     //public $s;
-//     public function __construct()
-//     {
-//         $this->root = null;
-//         //$this->s=file_get_contents('store');
-
-//     }
-//     //function to display the tree
-//     public function display()
-//     {
-//         $this->display_tree($this->root);
-//     }
-//     public function display_tree($local_root)
-//     {
-
-//         if ($local_root == null)
-//             return;
-//         $this->display_tree($local_root->leftChild);
-//         echo $local_root->data . "<br/>";
-//         $this->display_tree($local_root->rightChild);
-//     }
-//     // function to insert a new node
-//     public function insert($key)
-//     {
-//         $newnode = new Node($key);
-//         if ($this->root == null) {
-//             $this->root = $newnode;
-//             return;
-//         } else {
-//             $parent = $this->root;
-//             $current = $this->root;
-//             while (true) {
-//                 $parent = $current;
-//                 //$this->find_order($key,$current->data);
-//                 if ($key == ($this->find_order($key, $this->$current->data))) {
-//                     $current = $this->$current->leftChild;
-//                     if ($current == null) {
-//                         $this->$parent->leftChild = $newnode;
-//                         return;
-//                     } //end if2
-//                 } //end if1 
-//                 else {
-//                     $current = $this->$current->rightChild;
-//                     if ($current == null) {
-//                         $this->$parent->rightChild = $newnode;
-//                         return;
-//                     } //end if1                       
-//                 } //end else
-//             } //end while loop 
-//         } //end else
-
-//     } //end insert function
-
-//     //function to search a particular Node
-//     public function find($key)
-//     {
-//         $current = $this->root;
-//         while ($this->$current->data != $key) {
-//             if ($key == $this->find_order($key, $this->$current->data)) {
-//                 $current = $this->$current->leftChild;
-//             } else {
-//                 $current = $this->$current->rightChild;
-//             }
-//             if ($current == null)
-//                 return (null);
-//         }
-//         return ($current->data);
-//     } // end the function to search
-//     public function delete1($key)
-//     {
-//         $current = $this->root;
-//         $parent = $this->root;
-
-//         $isLeftChild = true;
-//         while ($this->$current->data != $key) {
-//             $parent = $current;
-//             if ($key == ($this->find_order($key, $this->$current->data))) {
-//                 $current = $this->$current->leftChild;
-//                 $isLeftChild = true;
-//             } else {
-//                 $current = $this->$current->rightChild;
-//                 $isLeftChild = false;
-//             }
-//             if ($current == null)
-//                 return (null);
-//         } //end while loop 
-
-//         echo "<br/><br/>Node to delete:" . $current->data;
-//         //to delete a leaf node 
-//         if ($current->leftChild == null && $current->rightChild == null) {
-//             if ($current == $this->root)
-//                 $this->root = null;
-//             else if ($isLeftChild == true) {
-//                 $this->$parent->leftChild = null;
-//             } else {
-//                 $this->$parent->rightChild = null;
-//             }
-//             return ($current);
-//         } //end if1
-//         //to delete a node having a leftChild 
-//         else if ($current->rightChild == null) {
-//             if ($current == $this->root)
-//                 $this->root = $current->leftChild;
-//             else if ($isLeftChild == true) {
-//                 $this->$parent->leftChild = $current->leftChild;
-//             } else {
-//                 $this->$parent->rightChild = $current->leftChild;
-//             }
-//             return ($current);
-//         } //end else if1
-//         //to delete a node having a rightChild
-//         else if ($current->leftChild == null) {
-//             if ($current == $this->root)
-//                 $this->root = $current->rightChild;
-//             else if ($isLeftChild == true) {
-//                 $this->$parent->leftChild = $current->rightChild;
-//             } else {
-//                 $this->$parent->rightChild = $current->rightChild;
-//             }
-//             return ($current);
-//         }
-//         //to delete a node having both childs
-//         else {
-//             $successor = $this->get_successor($current);
-//             if ($current == $this->root) {
-//                 $this->root = $successor;
-//             } else if ($isLeftChild == true) {
-//                 $this->$parent->leftChild = $successor;
-//             } else {
-//                 $this->$parent->rightChild = $successor;
-//             }
-//             $successor->leftChild = $current->leftChild;
-//             return ($current);
-//         }
-//     } //end the function to delete a node
-//     //Function to find the successor node
-//     public function get_successor($delNode)
-//     {
-//         $succParent = $delNode;
-//         $successor = $delNode;
-//         $temp = $delNode->rightChild;
-//         while ($temp != null) {
-//             $succParent = $successor;
-//             $successor = $temp;
-//             $temp = $temp->leftChild;
-//         }
-//         if ($successor != $delNode->rightChild) {
-//             $succParent->leftChild = $successor->rightChild;
-//             $successor->rightChild = $delNode->rightChild;
-//         }
-//         return ($successor);
-//     }
-//     //function to find the order of two strings
-//     public function find_order($str1, $str2)
-//     {
-//         $str1 = strtolower($str1);
-//         $str2 = strtolower($str2);
-//         $i = 0;
-//         $j = 0;
-
-//         $p1 = $str1[$i];
-//         $p2 = $str2[$j];
-//         while (true) {
-//             if (ord($p1) < ord($p2) || ($p1 == '' && $p2 == '')) {
-
-//                 return ($str1);
-//             } else {
-//                 if (ord($p1) == ord($p2)) {
-//                     $p1 = $str1[++$i];
-//                     $p2 = $str2[++$j];
-//                     continue;
-//                 }
-//                 return ($str2);
-//             }
-//         } //end while
-
-//     } //end function find string order
-
-//     public function is_empty()
-//     {
-//         if ($this->root == null)
-//             return (true);
-//         else
-//             return (false);
-//     }
-// } //end class BinaryTree
+foreach ($users as $user) {
+    $newUser = '<ul>
+                    <li>
+                        <div>' . $user['nombre'] . '</div>
+                </ul>
+                    </li>';
+}
 
 ?>
 
@@ -302,7 +107,7 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
                             </svg> Oportunidades De Negocio</a>
                     </li>
                     <li>
-                        <a href="#"><i class="fa fa-sitemap fa-3x"></i> Mi Red</a>
+                        <a href="mi_red.php"><i class="fa fa-sitemap fa-3x"></i> Mi Red</a>
                     </li>
                     <li>
                         <a href="mi_billetera.php"> <svg width="3em" height="3em" viewBox="0 0 16 16" class="bi bi-wallet" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
@@ -327,28 +132,7 @@ font-size: 16px;"> Bienvenido/a &nbsp; <?php echo $_SESSION['username']; ?> <a h
                 <div class="row">
                     <h3>Mi Red</h3>
                     <div class="tree">
-                        <ul>
-                            <li>
-                                <div>Usuario 1</div>
-                                <ul>
-                                    <li>
-                                        <div>Usuario 2</div>
-                                    </li>
-                                    <li>
-                                        <div>Usuario 3</div>
-                                        <ul>
-                                            <li>
-                                                <div>Usuario 4</div>
-                                            </li>
-                                            <li>
-                                                <div>Usuario 5</div>
-                                            </li>
-                                        </ul>
-                                    </li>
-                                </ul>
-
-                            </li>
-                        </ul>
+                        <?php echo $newUser; ?>
                     </div>
                 </div>
                 <!-- /. ROW  -->
